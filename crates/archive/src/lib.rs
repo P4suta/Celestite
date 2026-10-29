@@ -15,4 +15,4 @@ pub use model::{
     ArchiveError, CommitReceipt, Entry, LinkBinding, LinkTarget, NoteId, NoteRecord, ObjectId,
     PublicationStage, Record, Verification,
 };
-pub use storage::Vault;
+pub use storage::{Vault, copy_hashed};

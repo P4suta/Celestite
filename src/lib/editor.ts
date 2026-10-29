@@ -39,7 +39,11 @@ export class MarkdownEditor {
     changed: (text: string) => void,
     searched: (summary: SearchSummary) => void,
     followed: (position: number) => void = () => {},
-    completion: CompletionHooks = { candidates: async () => [], chosen: () => {} },
+    completion: CompletionHooks = {
+      candidates: async () => [],
+      chosen: () => {},
+      media: () => {},
+    },
   ) {
     this.changed = changed;
     this.searched = searched;
@@ -129,6 +133,13 @@ export class MarkdownEditor {
           },
           compositionend: () => {
             this.center();
+          },
+          paste: (event, view) => {
+            const files = Array.from(event.clipboardData?.files ?? []);
+            if (view.composing || view.state.readOnly || files.length === 0) return false;
+            event.preventDefault();
+            this.completion.media(files, view.state.selection.main.head);
+            return true;
           },
         }),
       ],

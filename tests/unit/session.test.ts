@@ -4,6 +4,7 @@ import {
   type DesktopBridge,
   DesktopError,
   type EditRequest,
+  type LinkPatch,
   type NoteDocument,
   type Preferences,
 } from "../../src/lib/contracts";
@@ -96,6 +97,12 @@ function fakeBridge(document: NoteDocument): DesktopBridge {
     maximize: vi.fn(async (): Promise<void> => {}),
     onClose: vi.fn(async (): Promise<() => void> => () => {}),
     onPreferences: vi.fn(async (): Promise<() => void> => () => {}),
+    onAssetDropped: vi.fn(async (): Promise<() => void> => () => {}),
+    onAssetFailed: vi.fn(async (): Promise<() => void> => () => {}),
+    storeAsset: vi.fn(async (_bytes: Uint8Array, extension: string) => ({
+      digest: "a".repeat(64),
+      extension,
+    })),
   };
 }
 
@@ -407,7 +414,9 @@ describe("note session", () => {
 
   it("checkpoints before inserting a link and applies patches as one editor change", async () => {
     const bridge = fakeBridge(note(null));
-    const patched = vi.fn();
+    const patched = vi.fn((_patches: readonly LinkPatch[], _caret: number) => {
+      session.edit("See [Obj]\n\n[Obj]: a.md\n");
+    });
     const session = new NoteSession(
       bridge,
       () => {},
@@ -440,8 +449,110 @@ describe("note session", () => {
     );
     expect(patched).toHaveBeenCalledTimes(1);
     expect(patched.mock.calls[0]?.[1]).toBe(9);
+    expect(session.state.text).toBe("See [Obj]\n\n[Obj]: a.md\n");
+    expect(session.state.revision).toBe(2);
     expect(session.state.busy).toBe(false);
     expect(session.state.notice).toBeNull();
+  });
+
+  it("stores pasted files in order and chains their image references", async () => {
+    const bridge = fakeBridge(note(null));
+    const patched = vi.fn((patches: readonly LinkPatch[]) => {
+      let text = session.state.text;
+      for (const patch of [...patches].reverse())
+        text = `${text.slice(0, patch.start)}${patch.insert}${text.slice(patch.end)}`;
+      session.edit(text);
+    });
+    const session = new NoteSession(
+      bridge,
+      () => {},
+      () => {},
+      patched,
+    );
+    sessions.push(session);
+    await session.initialize();
+    session.edit("# Shots\n\n");
+    vi.mocked(bridge.storeAsset).mockImplementation(async (bytes, extension) => ({
+      digest: String(bytes.length).padStart(64, "0"),
+      extension,
+    }));
+    vi.mocked(bridge.insertLink).mockImplementation(async (edit, range, words) => ({
+      token: edit.token,
+      revision: edit.revision,
+      patches: [{ start: range.from, end: range.to, insert: `![${words}]` }],
+      caret: range.from + words.length + 3,
+    }));
+    const files = [
+      new File([new Uint8Array(3)], "Screen Shot.png", { type: "image/png" }),
+      new File([new Uint8Array(5)], "", { type: "image/jpeg" }),
+    ];
+    await session.addMedia(files, 9);
+    expect(session.state.notice).toBeNull();
+    expect(bridge.storeAsset).toHaveBeenNthCalledWith(1, expect.any(Uint8Array), "png");
+    expect(bridge.storeAsset).toHaveBeenNthCalledWith(2, expect.any(Uint8Array), "jpg");
+    expect(bridge.insertLink).toHaveBeenNthCalledWith(
+      1,
+      expect.objectContaining({ text: "# Shots\n\n" }),
+      { from: 9, to: 9 },
+      "Screen Shot",
+      { kind: "asset", digest: "3".padStart(64, "0"), extension: "png" },
+      true,
+    );
+    expect(bridge.insertLink).toHaveBeenNthCalledWith(
+      2,
+      expect.anything(),
+      { from: 9 + "![Screen Shot]".length, to: 9 + "![Screen Shot]".length },
+      "image",
+      { kind: "asset", digest: "5".padStart(64, "0"), extension: "jpg" },
+      true,
+    );
+    expect(patched).toHaveBeenCalledTimes(2);
+    expect(session.state.busy).toBe(false);
+  });
+
+  it("stops a media sequence at an oversized file or a refused store", async () => {
+    const bridge = fakeBridge(note(null));
+    const session = await start(bridge);
+    session.edit("text");
+    const big = { name: "huge.png", type: "image/png", size: 64 * 1024 * 1024 + 1 } as File;
+    await session.addMedia([big], 4);
+    expect(bridge.storeAsset).not.toHaveBeenCalled();
+    expect(session.state.notice?.kind).toBe("linkFailed");
+    vi.mocked(bridge.storeAsset).mockRejectedValue(new DesktopError("link", "Not supported"));
+    await session.addMedia([new File([new Uint8Array(1)], "a.exe")], 4);
+    expect(bridge.insertLink).not.toHaveBeenCalled();
+    expect(session.state.notice).toEqual({ kind: "linkFailed", message: "Not supported" });
+  });
+
+  it("places a natively dropped asset at the editor caret", async () => {
+    const bridge = fakeBridge(note(null));
+    let dropped: ((drop: { digest: string; extension: string; label: string }) => void) | undefined;
+    vi.mocked(bridge.onAssetDropped).mockImplementation(async (handler) => {
+      dropped = handler;
+      return () => {};
+    });
+    const patched = vi.fn();
+    const session = new NoteSession(
+      bridge,
+      () => {},
+      () => {},
+      patched,
+      () => 2,
+    );
+    sessions.push(session);
+    await session.initialize();
+    session.edit("ab cd");
+    dropped?.({ digest: "b".repeat(64), extension: "pdf", label: "paper" });
+    await vi.advanceTimersByTimeAsync(0);
+    await vi.advanceTimersByTimeAsync(0);
+    expect(bridge.insertLink).toHaveBeenCalledWith(
+      expect.objectContaining({ text: "ab cd" }),
+      { from: 2, to: 2 },
+      "paper",
+      { kind: "asset", digest: "b".repeat(64), extension: "pdf" },
+      true,
+    );
+    expect(patched).toHaveBeenCalledTimes(1);
   });
 
   it("refuses link insertion for invalid ranges, stale text, and bad responses", async () => {

@@ -1,5 +1,6 @@
 import {
   type Appearance,
+  type AssetDrop,
   bodyIsEmpty,
   type DesktopBridge,
   DesktopError,
@@ -13,6 +14,7 @@ import {
   type Preferences,
   type Unsubscribe,
 } from "./contracts";
+import { MAX_PASTED_BYTES, mediaExtension, mediaLabel } from "./media";
 
 const AUTOSAVE_DELAY_MS = 800;
 const EXTERNAL_CHANGE_POLL_INTERVAL_MS = 3000;
@@ -72,6 +74,7 @@ export class NoteSession {
   private readonly changed: (state: SessionState, replaceText: boolean) => void;
   private readonly moved: (position: number) => void;
   private readonly patched: (patches: readonly LinkPatch[], caret: number) => void;
+  private readonly caret: () => number;
   private queue: Promise<void> = Promise.resolve();
   private debounce: ReturnType<typeof setTimeout> | undefined;
   private poll: ReturnType<typeof setInterval> | undefined;
@@ -84,11 +87,13 @@ export class NoteSession {
     changed: (state: SessionState, replaceText: boolean) => void,
     moved: (position: number) => void = () => {},
     patched: (patches: readonly LinkPatch[], caret: number) => void = () => {},
+    caret: () => number = () => this.current.text.length,
   ) {
     this.bridge = bridge;
     this.changed = changed;
     this.moved = moved;
     this.patched = patched;
+    this.caret = caret;
   }
 
   public get state(): SessionState {
@@ -172,6 +177,12 @@ export class NoteSession {
           void this.requestClose();
         }),
         this.bridge.onPreferences((preferences) => this.publish({ preferences })),
+        this.bridge.onAssetDropped((drop) => {
+          void this.placeDrop(drop);
+        }),
+        this.bridge.onAssetFailed((message) =>
+          this.publish({ notice: { kind: "linkFailed", message } }),
+        ),
       ]);
       const cleanups = subscriptions.flatMap((result) =>
         result.status === "fulfilled" ? [result.value] : [],
@@ -344,6 +355,7 @@ export class NoteSession {
    * Turns the words at `range` into a reference link to `target`.
    *
    * Pending edits are checkpointed first; the native patches are applied only when the text is still the one they were planned for, as one editor transaction.
+   * The session leaves its busy state before the patches reach the editor, so the editor's change event records the patched text.
    */
   public async insertLink(
     range: LinkRange,
@@ -351,6 +363,15 @@ export class NoteSession {
     target: LinkTarget,
     image: boolean,
   ): Promise<boolean> {
+    return (await this.link(range, words, target, image)) !== null;
+  }
+
+  private async link(
+    range: LinkRange,
+    words: string,
+    target: LinkTarget,
+    image: boolean,
+  ): Promise<number | null> {
     const length = this.current.text.length;
     if (
       this.disposed ||
@@ -363,32 +384,79 @@ export class NoteSession {
       range.from > range.to ||
       range.to > length
     )
-      return false;
+      return null;
     this.publish({ busy: true });
     try {
-      if (!(await this.flush())) return false;
+      if (!(await this.flush())) return null;
       const edit = this.request();
-      if (!edit) return false;
+      if (!edit) return null;
       const result = await this.serialize(() =>
         this.bridge.insertLink(edit, range, words, target, image),
       );
-      if (this.disposed || edit.token !== this.current.document?.token) return false;
+      if (this.disposed || edit.token !== this.current.document?.token) return null;
       if (
         result.token !== edit.token ||
         result.revision !== edit.revision ||
         !validPatches(result.patches, result.caret, edit.text.length)
       )
         throw new DesktopError("invalid-response", "The link response does not match this note.");
-      if (edit.text !== this.current.text) return false;
-      this.publish({ notice: null });
+      if (edit.text !== this.current.text) return null;
+      this.publish({ notice: null, busy: false });
       this.patched(result.patches, result.caret);
-      return true;
+      return result.caret;
     } catch (error) {
       this.publish({ notice: { kind: "linkFailed", message: desktopError(error).message } });
-      return false;
+      return null;
     } finally {
       this.publish({ busy: false });
     }
+  }
+
+  /**
+   * Stores pasted files in the library and inserts an image reference for each at `caret`.
+   *
+   * Each file is stored before its reference is written, and the next reference follows the previous one; an unsupported or oversized file stops the sequence with a notice.
+   */
+  public async addMedia(files: readonly File[], caret: number): Promise<void> {
+    if (this.disposed || this.current.loading || this.current.busy || this.current.closing) return;
+    let position = caret;
+    for (const file of files) {
+      if (file.size > MAX_PASTED_BYTES) {
+        this.publish({
+          notice: {
+            kind: "linkFailed",
+            message: "Pasted media is limited to 64 MiB; drop the file instead.",
+          },
+        });
+        return;
+      }
+      let receipt: Awaited<ReturnType<DesktopBridge["storeAsset"]>>;
+      try {
+        const bytes = new Uint8Array(await file.arrayBuffer());
+        receipt = await this.serialize(() => this.bridge.storeAsset(bytes, mediaExtension(file)));
+      } catch (error) {
+        this.publish({ notice: { kind: "linkFailed", message: desktopError(error).message } });
+        return;
+      }
+      const next = await this.link(
+        { from: position, to: position },
+        mediaLabel(file.name),
+        { kind: "asset", digest: receipt.digest, extension: receipt.extension },
+        true,
+      );
+      if (next === null) return;
+      position = next;
+    }
+  }
+
+  private async placeDrop(drop: AssetDrop): Promise<void> {
+    const caret = this.caret();
+    await this.link(
+      { from: caret, to: caret },
+      drop.label,
+      { kind: "asset", digest: drop.digest, extension: drop.extension },
+      true,
+    );
   }
 
   public async reload(): Promise<void> {

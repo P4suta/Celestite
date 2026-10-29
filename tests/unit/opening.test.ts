@@ -26,6 +26,8 @@ it("freezes input while replacing an empty document with an opened file", async 
     bootstrap: async (): Promise<Bootstrap> => bootstrap,
     onClose: async (): Promise<() => void> => () => {},
     onPreferences: async (): Promise<() => void> => () => {},
+    onAssetDropped: async (): Promise<() => void> => () => {},
+    onAssetFailed: async (): Promise<() => void> => () => {},
     open: vi.fn(async (): Promise<{ document: null }> => {
       await waiting;
       return { document: null };
@@ -42,6 +44,7 @@ it("freezes input while replacing an empty document with an opened file", async 
       followLink: unavailable,
       listLibraryNotes: unavailable,
       insertLink: unavailable,
+      storeAsset: unavailable,
       newWindow: unavailable,
       inspect: unavailable,
       reload: unavailable,

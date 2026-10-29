@@ -16,13 +16,25 @@ enum LocalLinkKind {
     Attachment,
 }
 
+const ATTACHMENT_EXTENSIONS: [&str; 13] = [
+    "pdf", "png", "jpg", "jpeg", "gif", "webp", "avif", "heic", "mp3", "m4a", "wav", "mp4", "mov",
+];
+
 fn local_link_kind(extension: &str) -> Option<LocalLinkKind> {
     match extension {
         "md" | "markdown" | "txt" => Some(LocalLinkKind::Note),
-        "pdf" | "png" | "jpg" | "jpeg" | "gif" | "webp" | "avif" | "heic" | "mp3" | "m4a"
-        | "wav" | "mp4" | "mov" => Some(LocalLinkKind::Attachment),
+        other if ATTACHMENT_EXTENSIONS.contains(&other) => Some(LocalLinkKind::Attachment),
         _ => None,
     }
+}
+
+/// Returns the lowercase library spelling of a supported media extension, with `jpeg` written as `jpg`.
+pub fn asset_extension(extension: &str) -> Option<&'static str> {
+    let lower = extension.to_ascii_lowercase();
+    let canonical = if lower == "jpeg" { "jpg" } else { &lower };
+    ATTACHMENT_EXTENSIONS
+        .into_iter()
+        .find(|known| *known == canonical)
 }
 
 fn scheme_less_url(destination: &str) -> Option<Url> {

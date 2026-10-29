@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "timestamp": "2026-10-28T18:02:51.223704133Z",
+    "timestamp": "2026-10-29T05:39:41.731254119Z",
     "kani_version": "0.68.0",
     "target": "x86_64-unknown-linux-gnu",
     "build_mode": "release"
@@ -26,15 +26,15 @@
   },
   "harness_metadata": [
     {
-      "pretty_name": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "pretty_name": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs73archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
       "crate_name": "celestite_verification",
       "source": {
         "file": "src/lib.rs",
-        "start_line": 615,
-        "end_line": 625
+        "start_line": 87,
+        "end_line": 110
       },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68library_writes_only_untitled_nonempty_notes_into_an_existing_library.symtab.out",
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs73archive_object_ids_accept_exactly_the_complete_fixed_width_representation.symtab.out",
       "attributes": {
         "kind": "Proof",
         "should_panic": false
@@ -49,84 +49,15 @@
       "is_ctor_based": false
     },
     {
-      "pretty_name": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs59navigation_requires_the_exact_source_and_a_bounded_position",
+      "pretty_name": "proofs::archive_object_id_lengths_cover_every_machine_integer",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs53archive_object_id_lengths_cover_every_machine_integer",
       "crate_name": "celestite_verification",
       "source": {
         "file": "src/lib.rs",
-        "start_line": 21,
-        "end_line": 52
+        "start_line": 74,
+        "end_line": 83
       },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs59navigation_requires_the_exact_source_and_a_bounded_position.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55proof_admission_rejects_every_incomplete_or_unbound_run",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 493,
-        "end_line": 541
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55proof_admission_rejects_every_incomplete_or_unbound_run.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs56labels_accept_exactly_balanced_nonempty_single_line_text",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 680,
-        "end_line": 726
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs56labels_accept_exactly_balanced_nonempty_single_line_text.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57application_exit_waits_for_live_notes_and_pending_cleanup",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 295,
-        "end_line": 308
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57application_exit_waits_for_live_notes_and_pending_cleanup.symtab.out",
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs53archive_object_id_lengths_cover_every_machine_integer.symtab.out",
       "attributes": {
         "kind": "Proof",
         "should_panic": false
@@ -164,6 +95,374 @@
       "is_ctor_based": false
     },
     {
+      "pretty_name": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs61archive_repairs_require_matching_sources_and_valid_byte_spans",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 188,
+        "end_line": 203
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs61archive_repairs_require_matching_sources_and_valid_byte_spans.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs60recovery_metadata_never_constructs_an_invalid_document_state",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 356,
+        "end_line": 382
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs60recovery_metadata_never_constructs_an_invalid_document_state.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55fuzz_admission_requires_completed_nonempty_current_runs",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 114,
+        "end_line": 133
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55fuzz_admission_requires_completed_nonempty_current_runs.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65editor_capture_acknowledges_only_its_selected_unconflicted_source",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 56,
+        "end_line": 70
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65editor_capture_acknowledges_only_its_selected_unconflicted_source.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55proof_admission_rejects_every_incomplete_or_unbound_run",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 493,
+        "end_line": 541
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55proof_admission_rejects_every_incomplete_or_unbound_run.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::inferred_https_never_overrides_local_file_intent",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs48inferred_https_never_overrides_local_file_intent",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 7,
+        "end_line": 17
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs48inferred_https_never_overrides_local_file_intent.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::open_target_preserves_every_nonempty_or_named_document",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs54open_target_preserves_every_nonempty_or_named_document",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 571,
+        "end_line": 578
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs54open_target_preserves_every_nonempty_or_named_document.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 615,
+        "end_line": 625
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68library_writes_only_untitled_nonempty_notes_into_an_existing_library.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57encoded_lengths_match_mathematical_sizes_without_overflow",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 332,
+        "end_line": 352
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57encoded_lengths_match_mathematical_sizes_without_overflow.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs64media_are_written_once_kept_when_identical_and_never_overwritten",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 730,
+        "end_line": 741
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs64media_are_written_once_kept_when_identical_and_never_overwritten.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::definitions_append_once_and_never_retarget_a_label",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs50definitions_append_once_and_never_retarget_a_label",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 629,
+        "end_line": 640
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs50definitions_append_once_and_never_retarget_a_label.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs63mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 225,
+        "end_line": 261
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs63mutation_admission_rejects_missing_stale_or_interrupted_results.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::edit_validation_covers_tokens_revisions_and_sizes",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs49edit_validation_covers_tokens_revisions_and_sizes",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 582,
+        "end_line": 611
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs49edit_validation_covers_tokens_revisions_and_sizes.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::rejects_a_false_definition_contract",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs35rejects_a_false_definition_contract",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 761,
+        "end_line": 768
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs35rejects_a_false_definition_contract.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 445,
+        "end_line": 471
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65arbitrary_finite_edit_save_sequences_preserve_revision_invariants.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": true,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::rejects_a_false_write_contract",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs30rejects_a_false_write_contract",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 773,
+        "end_line": 783
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs30rejects_a_false_write_contract.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
       "pretty_name": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
       "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs66definition_separators_never_let_a_definition_interrupt_a_paragraph",
       "crate_name": "celestite_verification",
@@ -173,6 +472,75 @@
         "end_line": 676
       },
       "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs66definition_separators_never_let_a_definition_interrupt_a_paragraph.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55byte_budgets_reject_overflow_and_every_oversized_append",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 475,
+        "end_line": 489
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55byte_budgets_reject_overflow_and_every_oversized_append.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55revision_transitions_preserve_bounds_and_saved_progress",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 386,
+        "end_line": 425
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55revision_transitions_preserve_bounds_and_saved_progress.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 745,
+        "end_line": 756
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68media_links_require_a_library_and_a_note_without_a_path_or_inside_it.symtab.out",
       "attributes": {
         "kind": "Proof",
         "should_panic": false
@@ -233,15 +601,15 @@
       "is_ctor_based": false
     },
     {
-      "pretty_name": "proofs::definitions_append_once_and_never_retarget_a_label",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs50definitions_append_once_and_never_retarget_a_label",
+      "pretty_name": "proofs::archive_publication_requires_synced_objects_and_an_unchanged_head",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65archive_publication_requires_synced_objects_and_an_unchanged_head",
       "crate_name": "celestite_verification",
       "source": {
         "file": "src/lib.rs",
-        "start_line": 629,
-        "end_line": 640
+        "start_line": 154,
+        "end_line": 184
       },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs50definitions_append_once_and_never_retarget_a_label.symtab.out",
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65archive_publication_requires_synced_objects_and_an_unchanged_head.symtab.out",
       "attributes": {
         "kind": "Proof",
         "should_panic": false
@@ -256,15 +624,84 @@
       "is_ctor_based": false
     },
     {
-      "pretty_name": "proofs::rejects_a_false_write_contract",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs30rejects_a_false_write_contract",
+      "pretty_name": "proofs::archive_graph_extensions_require_fresh_identity_and_complete_parents",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68archive_graph_extensions_require_fresh_identity_and_complete_parents",
       "crate_name": "celestite_verification",
       "source": {
         "file": "src/lib.rs",
-        "start_line": 743,
-        "end_line": 753
+        "start_line": 207,
+        "end_line": 216
       },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs30rejects_a_false_write_contract.symtab.out",
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68archive_graph_extensions_require_fresh_identity_and_complete_parents.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57application_exit_waits_for_live_notes_and_pending_cleanup",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 295,
+        "end_line": 308
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57application_exit_waits_for_live_notes_and_pending_cleanup.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs56labels_accept_exactly_balanced_nonempty_single_line_text",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 680,
+        "end_line": 726
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs56labels_accept_exactly_balanced_nonempty_single_line_text.symtab.out",
+      "attributes": {
+        "kind": "Proof",
+        "should_panic": false
+      },
+      "contract": {
+        "contracted_function_name": null,
+        "recursion_tracker": null
+      },
+      "has_loop_contracts": false,
+      "is_automatically_generated": false,
+      "is_bounded": false,
+      "is_ctor_based": false
+    },
+    {
+      "pretty_name": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
+      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs59navigation_requires_the_exact_source_and_a_bounded_position",
+      "crate_name": "celestite_verification",
+      "source": {
+        "file": "src/lib.rs",
+        "start_line": 21,
+        "end_line": 52
+      },
+      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs59navigation_requires_the_exact_source_and_a_bounded_position.symtab.out",
       "attributes": {
         "kind": "Proof",
         "should_panic": false
@@ -300,418 +737,15 @@
       "is_automatically_generated": false,
       "is_bounded": false,
       "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65editor_capture_acknowledges_only_its_selected_unconflicted_source",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 56,
-        "end_line": 70
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65editor_capture_acknowledges_only_its_selected_unconflicted_source.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::open_target_preserves_every_nonempty_or_named_document",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs54open_target_preserves_every_nonempty_or_named_document",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 571,
-        "end_line": 578
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs54open_target_preserves_every_nonempty_or_named_document.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs60recovery_metadata_never_constructs_an_invalid_document_state",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 356,
-        "end_line": 382
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs60recovery_metadata_never_constructs_an_invalid_document_state.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55revision_transitions_preserve_bounds_and_saved_progress",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 386,
-        "end_line": 425
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55revision_transitions_preserve_bounds_and_saved_progress.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::inferred_https_never_overrides_local_file_intent",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs48inferred_https_never_overrides_local_file_intent",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 7,
-        "end_line": 17
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs48inferred_https_never_overrides_local_file_intent.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55byte_budgets_reject_overflow_and_every_oversized_append",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 475,
-        "end_line": 489
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55byte_budgets_reject_overflow_and_every_oversized_append.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::edit_validation_covers_tokens_revisions_and_sizes",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs49edit_validation_covers_tokens_revisions_and_sizes",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 582,
-        "end_line": 611
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs49edit_validation_covers_tokens_revisions_and_sizes.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::rejects_a_false_definition_contract",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs35rejects_a_false_definition_contract",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 731,
-        "end_line": 738
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs35rejects_a_false_definition_contract.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55fuzz_admission_requires_completed_nonempty_current_runs",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 114,
-        "end_line": 133
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs55fuzz_admission_requires_completed_nonempty_current_runs.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs63mutation_admission_rejects_missing_stale_or_interrupted_results",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 225,
-        "end_line": 261
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs63mutation_admission_rejects_missing_stale_or_interrupted_results.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57encoded_lengths_match_mathematical_sizes_without_overflow",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 332,
-        "end_line": 352
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs57encoded_lengths_match_mathematical_sizes_without_overflow.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::archive_object_id_lengths_cover_every_machine_integer",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs53archive_object_id_lengths_cover_every_machine_integer",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 74,
-        "end_line": 83
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs53archive_object_id_lengths_cover_every_machine_integer.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::archive_publication_requires_synced_objects_and_an_unchanged_head",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65archive_publication_requires_synced_objects_and_an_unchanged_head",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 154,
-        "end_line": 184
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65archive_publication_requires_synced_objects_and_an_unchanged_head.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs61archive_repairs_require_matching_sources_and_valid_byte_spans",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 188,
-        "end_line": 203
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs61archive_repairs_require_matching_sources_and_valid_byte_spans.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs73archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 87,
-        "end_line": 110
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs73archive_object_ids_accept_exactly_the_complete_fixed_width_representation.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 445,
-        "end_line": 471
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs65arbitrary_finite_edit_save_sequences_preserve_revision_invariants.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": true,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
-    },
-    {
-      "pretty_name": "proofs::archive_graph_extensions_require_fresh_identity_and_complete_parents",
-      "mangled_name": "_RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68archive_graph_extensions_require_fresh_identity_and_complete_parents",
-      "crate_name": "celestite_verification",
-      "source": {
-        "file": "src/lib.rs",
-        "start_line": 207,
-        "end_line": 216
-      },
-      "goto_file": "/proof-target/kani/x86_64-unknown-linux-gnu/debug/build/celestite-verification/f3441888ec281882/out/celestite_verification-f3441888ec281882__RNvNtCsbeV8ZSfn0AA_22celestite_verification6proofs68archive_graph_extensions_require_fresh_identity_and_complete_parents.symtab.out",
-      "attributes": {
-        "kind": "Proof",
-        "should_panic": false
-      },
-      "contract": {
-        "contracted_function_name": null,
-        "recursion_tracker": null
-      },
-      "has_loop_contracts": false,
-      "is_automatically_generated": false,
-      "is_bounded": false,
-      "is_ctor_based": false
     }
   ],
   "error_details": [
     {
-      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
       "has_errors": false
     },
     {
-      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
+      "harness_id": "proofs::archive_object_id_lengths_cover_every_machine_integer",
       "has_errors": false
     },
     {
@@ -722,38 +756,7 @@
       "exit_status": "properties_failed"
     },
     {
-      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::rejects_a_false_write_contract",
-      "has_errors": true,
-      "error_type": "assertion_failure",
-      "failed_properties_type": "PanicsOnly",
-      "exit_status": "properties_failed"
-    },
-    {
-      "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
+      "harness_id": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
       "has_errors": false
     },
     {
@@ -761,7 +764,15 @@
       "has_errors": false
     },
     {
-      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
+      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
       "has_errors": false
     },
     {
@@ -769,7 +780,27 @@
       "has_errors": false
     },
     {
-      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
+      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
       "has_errors": false
     },
     {
@@ -784,19 +815,38 @@
       "exit_status": "properties_failed"
     },
     {
-      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
+      "harness_id": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
       "has_errors": false
     },
     {
-      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "harness_id": "proofs::rejects_a_false_write_contract",
+      "has_errors": true,
+      "error_type": "assertion_failure",
+      "failed_properties_type": "PanicsOnly",
+      "exit_status": "properties_failed"
+    },
+    {
+      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
       "has_errors": false
     },
     {
-      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
+      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
       "has_errors": false
     },
     {
-      "harness_id": "proofs::archive_object_id_lengths_cover_every_machine_integer",
+      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
       "has_errors": false
     },
     {
@@ -804,88 +854,47 @@
       "has_errors": false
     },
     {
-      "harness_id": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
-      "has_errors": false
-    },
-    {
-      "harness_id": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
-      "has_errors": false
-    },
-    {
       "harness_id": "proofs::archive_graph_extensions_require_fresh_identity_and_complete_parents",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
+      "has_errors": false
+    },
+    {
+      "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
       "has_errors": false
     }
   ],
   "property_details": [
     {
-      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
       "property_details": {
-        "total_properties": 5,
+        "total_properties": 172,
+        "passed": 167,
+        "failed": 0,
+        "unreachable": 1,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::archive_object_id_lengths_cover_every_machine_integer",
+      "property_details": {
+        "total_properties": 4,
         "passed": 1,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 4,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
-      "property_details": {
-        "total_properties": 19,
-        "passed": 15,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 4,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
-      "property_details": {
-        "total_properties": 105,
-        "passed": 99,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 6,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
-      "property_details": {
-        "total_properties": 103,
-        "passed": 98,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 5,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
-      "property_details": {
-        "total_properties": 18,
-        "passed": 15,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -912,10 +921,10 @@
       }
     },
     {
-      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
+      "harness_id": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
       "property_details": {
-        "total_properties": 19,
-        "passed": 15,
+        "total_properties": 7,
+        "passed": 3,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -927,70 +936,25 @@
       }
     },
     {
-      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
+      "harness_id": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
       "property_details": {
-        "total_properties": 19,
-        "passed": 16,
+        "total_properties": 15,
+        "passed": 11,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
         "solver_error": 0,
-        "satisfied": 3,
+        "satisfied": 4,
         "unsatisfiable": 0,
         "covered": 0,
         "uncovered": 0
       }
     },
     {
-      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
+      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
       "property_details": {
-        "total_properties": 19,
-        "passed": 16,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 3,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
-      "property_details": {
-        "total_properties": 18,
-        "passed": 15,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 3,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::rejects_a_false_write_contract",
-      "property_details": {
-        "total_properties": 14,
-        "passed": 13,
-        "failed": 1,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 0,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
-      "property_details": {
-        "total_properties": 17,
-        "passed": 13,
+        "total_properties": 37,
+        "passed": 33,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -1017,45 +981,15 @@
       }
     },
     {
-      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
+      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
       "property_details": {
-        "total_properties": 15,
-        "passed": 13,
+        "total_properties": 105,
+        "passed": 99,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
         "solver_error": 0,
-        "satisfied": 2,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
-      "property_details": {
-        "total_properties": 15,
-        "passed": 11,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 4,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
-      "property_details": {
-        "total_properties": 85,
-        "passed": 78,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 7,
+        "satisfied": 6,
         "unsatisfiable": 0,
         "covered": 0,
         "uncovered": 0
@@ -1077,15 +1011,90 @@
       }
     },
     {
-      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
+      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
       "property_details": {
-        "total_properties": 54,
-        "passed": 50,
+        "total_properties": 15,
+        "passed": 13,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 2,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "property_details": {
+        "total_properties": 5,
+        "passed": 1,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
         "solver_error": 0,
         "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
+      "property_details": {
+        "total_properties": 49,
+        "passed": 45,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+      "property_details": {
+        "total_properties": 18,
+        "passed": 15,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 3,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
+      "property_details": {
+        "total_properties": 18,
+        "passed": 15,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 3,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "property_details": {
+        "total_properties": 66,
+        "passed": 60,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 6,
         "unsatisfiable": 0,
         "covered": 0,
         "uncovered": 0
@@ -1122,10 +1131,40 @@
       }
     },
     {
-      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
+      "harness_id": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
       "property_details": {
-        "total_properties": 37,
-        "passed": 33,
+        "total_properties": 127,
+        "passed": 124,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 3,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::rejects_a_false_write_contract",
+      "property_details": {
+        "total_properties": 14,
+        "passed": 13,
+        "failed": 1,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 0,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
+      "property_details": {
+        "total_properties": 19,
+        "passed": 15,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -1137,25 +1176,10 @@
       }
     },
     {
-      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
       "property_details": {
-        "total_properties": 66,
-        "passed": 60,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 6,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
-      "property_details": {
-        "total_properties": 49,
-        "passed": 45,
+        "total_properties": 54,
+        "passed": 50,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -1167,10 +1191,55 @@
       }
     },
     {
-      "harness_id": "proofs::archive_object_id_lengths_cover_every_machine_integer",
+      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
       "property_details": {
-        "total_properties": 4,
+        "total_properties": 85,
+        "passed": 78,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 7,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+      "property_details": {
+        "total_properties": 5,
         "passed": 1,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
+      "property_details": {
+        "total_properties": 19,
+        "passed": 16,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 3,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
+      }
+    },
+    {
+      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
+      "property_details": {
+        "total_properties": 19,
+        "passed": 16,
         "failed": 0,
         "unreachable": 0,
         "undetermined": 0,
@@ -1197,51 +1266,6 @@
       }
     },
     {
-      "harness_id": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
-      "property_details": {
-        "total_properties": 7,
-        "passed": 3,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 4,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
-      "property_details": {
-        "total_properties": 172,
-        "passed": 167,
-        "failed": 0,
-        "unreachable": 1,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 4,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
-      "harness_id": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
-      "property_details": {
-        "total_properties": 127,
-        "passed": 124,
-        "failed": 0,
-        "unreachable": 0,
-        "undetermined": 0,
-        "solver_error": 0,
-        "satisfied": 3,
-        "unsatisfiable": 0,
-        "covered": 0,
-        "uncovered": 0
-      }
-    },
-    {
       "harness_id": "proofs::archive_graph_extensions_require_fresh_identity_and_complete_parents",
       "property_details": {
         "total_properties": 4,
@@ -1255,287 +1279,71 @@
         "covered": 0,
         "uncovered": 0
       }
-    }
-  ],
-  "cbmc": [
-    {
-      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0212909,
-        "size_program_expression": 494,
-        "slicing_removed_assignments": 210,
-        "vccs_generated": 10,
-        "vccs_remaining": 10,
-        "runtime_postprocess_equation_s": 0.000456126,
-        "runtime_convert_ssa_s": 0.00603425,
-        "runtime_post_process_s": 0.00032575,
-        "runtime_solver_s": 0.00234083,
-        "runtime_decision_procedure_s": 0.00239717
-      }
     },
     {
-      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0311427,
-        "size_program_expression": 1016,
-        "slicing_removed_assignments": 487,
-        "vccs_generated": 86,
-        "vccs_remaining": 14,
-        "runtime_postprocess_equation_s": 0.000584793,
-        "runtime_convert_ssa_s": 0.00785696,
-        "runtime_post_process_s": 0.000319209,
-        "runtime_solver_s": 0.00311096,
-        "runtime_decision_procedure_s": 0.00323154
-      }
-    },
-    {
-      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0563583,
-        "size_program_expression": 2269,
-        "slicing_removed_assignments": 1347,
-        "vccs_generated": 90,
-        "vccs_remaining": 23,
-        "runtime_postprocess_equation_s": 0.00080925,
-        "runtime_convert_ssa_s": 0.0109567,
-        "runtime_post_process_s": 0.000326292,
-        "runtime_solver_s": 0.062486,
-        "runtime_decision_procedure_s": 0.0625695
+      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
+      "property_details": {
+        "total_properties": 18,
+        "passed": 15,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 3,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
       }
     },
     {
       "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.200175,
-        "size_program_expression": 11000,
-        "slicing_removed_assignments": 7548,
-        "vccs_generated": 952,
-        "vccs_remaining": 511,
-        "runtime_postprocess_equation_s": 0.00709992,
-        "runtime_convert_ssa_s": 0.0246871,
-        "runtime_post_process_s": 0.00378917,
-        "runtime_solver_s": 0.0406012,
-        "runtime_decision_procedure_s": 0.0408654
+      "property_details": {
+        "total_properties": 100,
+        "passed": 95,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 5,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
       }
     },
     {
-      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0259589,
-        "size_program_expression": 628,
-        "slicing_removed_assignments": 318,
-        "vccs_generated": 84,
-        "vccs_remaining": 12,
-        "runtime_postprocess_equation_s": 0.000258417,
-        "runtime_convert_ssa_s": 0.0064475,
-        "runtime_post_process_s": 0.000312542,
-        "runtime_solver_s": 0.00276696,
-        "runtime_decision_procedure_s": 0.00279913
-      }
-    },
-    {
-      "harness_id": "proofs::rejects_a_false_mutation_admission_contract",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0214646,
-        "size_program_expression": 289,
-        "slicing_removed_assignments": 193,
-        "vccs_generated": 14,
-        "vccs_remaining": 2,
-        "runtime_postprocess_equation_s": 0.000216458,
-        "runtime_convert_ssa_s": 0.00553571,
-        "runtime_post_process_s": 0.000331792,
-        "runtime_solver_s": 0.00173934,
-        "runtime_decision_procedure_s": 0.00799859
-      }
-    },
-    {
-      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0290113,
-        "size_program_expression": 875,
-        "slicing_removed_assignments": 423,
-        "vccs_generated": 86,
-        "vccs_remaining": 14,
-        "runtime_postprocess_equation_s": 0.0003015,
-        "runtime_convert_ssa_s": 0.00731059,
-        "runtime_post_process_s": 0.000322542,
-        "runtime_solver_s": 0.00280821,
-        "runtime_decision_procedure_s": 0.00284638
-      }
-    },
-    {
-      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0274021,
-        "size_program_expression": 692,
-        "slicing_removed_assignments": 347,
-        "vccs_generated": 85,
-        "vccs_remaining": 13,
-        "runtime_postprocess_equation_s": 0.000250416,
-        "runtime_convert_ssa_s": 0.00696405,
-        "runtime_post_process_s": 0.000369042,
-        "runtime_solver_s": 0.000217792,
-        "runtime_decision_procedure_s": 0.000266458
-      }
-    },
-    {
-      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.031301,
-        "size_program_expression": 900,
-        "slicing_removed_assignments": 454,
-        "vccs_generated": 110,
-        "vccs_remaining": 14,
-        "runtime_postprocess_equation_s": 0.000371833,
-        "runtime_convert_ssa_s": 0.00744676,
-        "runtime_post_process_s": 0.000347292,
-        "runtime_solver_s": 0.00276734,
-        "runtime_decision_procedure_s": 0.00279092
-      }
-    },
-    {
-      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0265529,
-        "size_program_expression": 745,
-        "slicing_removed_assignments": 378,
-        "vccs_generated": 84,
-        "vccs_remaining": 12,
-        "runtime_postprocess_equation_s": 0.000266458,
-        "runtime_convert_ssa_s": 0.00644713,
-        "runtime_post_process_s": 0.000287542,
-        "runtime_solver_s": 0.00248921,
-        "runtime_decision_procedure_s": 0.00250946
-      }
-    },
-    {
-      "harness_id": "proofs::rejects_a_false_write_contract",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0188271,
-        "size_program_expression": 231,
-        "slicing_removed_assignments": 141,
-        "vccs_generated": 14,
-        "vccs_remaining": 2,
-        "runtime_postprocess_equation_s": 0.000194667,
-        "runtime_convert_ssa_s": 0.00531388,
-        "runtime_post_process_s": 0.000349333,
-        "runtime_solver_s": 0.00172354,
-        "runtime_decision_procedure_s": 0.00777059
+      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
+      "property_details": {
+        "total_properties": 19,
+        "passed": 15,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
       }
     },
     {
       "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0248098,
-        "size_program_expression": 721,
-        "slicing_removed_assignments": 315,
-        "vccs_generated": 22,
-        "vccs_remaining": 10,
-        "runtime_postprocess_equation_s": 0.000307251,
-        "runtime_convert_ssa_s": 0.00669259,
-        "runtime_post_process_s": 0.000329666,
-        "runtime_solver_s": 0.000040417,
-        "runtime_decision_procedure_s": 0.000122666
+      "property_details": {
+        "total_properties": 17,
+        "passed": 13,
+        "failed": 0,
+        "unreachable": 0,
+        "undetermined": 0,
+        "solver_error": 0,
+        "satisfied": 4,
+        "unsatisfiable": 0,
+        "covered": 0,
+        "uncovered": 0
       }
-    },
+    }
+  ],
+  "cbmc": [
     {
-      "harness_id": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
+      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
       "cbmc_metadata": {
         "version": "6.11.0",
         "os_info": "x86_64 linux unix"
@@ -1545,246 +1353,16 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0266068,
-        "size_program_expression": 652,
-        "slicing_removed_assignments": 331,
-        "vccs_generated": 84,
-        "vccs_remaining": 12,
-        "runtime_postprocess_equation_s": 0.0002495,
-        "runtime_convert_ssa_s": 0.00650034,
-        "runtime_post_process_s": 0.000344459,
-        "runtime_solver_s": 0.00207546,
-        "runtime_decision_procedure_s": 0.00213
-      }
-    },
-    {
-      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0233397,
-        "size_program_expression": 399,
-        "slicing_removed_assignments": 196,
-        "vccs_generated": 42,
-        "vccs_remaining": 6,
-        "runtime_postprocess_equation_s": 0.000220959,
-        "runtime_convert_ssa_s": 0.00623771,
-        "runtime_post_process_s": 0.000340292,
-        "runtime_solver_s": 0.00126096,
-        "runtime_decision_procedure_s": 0.00130704
-      }
-    },
-    {
-      "harness_id": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0334651,
-        "size_program_expression": 1270,
-        "slicing_removed_assignments": 607,
-        "vccs_generated": 22,
-        "vccs_remaining": 16,
-        "runtime_postprocess_equation_s": 0.000434667,
-        "runtime_convert_ssa_s": 0.00847642,
-        "runtime_post_process_s": 0.000343375,
-        "runtime_solver_s": 0.00338558,
-        "runtime_decision_procedure_s": 0.003425
-      }
-    },
-    {
-      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0437657,
-        "size_program_expression": 2541,
-        "slicing_removed_assignments": 1335,
-        "vccs_generated": 120,
-        "vccs_remaining": 36,
-        "runtime_postprocess_equation_s": 0.000472376,
-        "runtime_convert_ssa_s": 0.0103185,
-        "runtime_post_process_s": 0.000332792,
-        "runtime_solver_s": 0.0566296,
-        "runtime_decision_procedure_s": 0.0567277
-      }
-    },
-    {
-      "harness_id": "proofs::inferred_https_never_overrides_local_file_intent",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0221289,
-        "size_program_expression": 558,
-        "slicing_removed_assignments": 242,
-        "vccs_generated": 10,
-        "vccs_remaining": 10,
-        "runtime_postprocess_equation_s": 0.000310042,
-        "runtime_convert_ssa_s": 0.00586763,
-        "runtime_post_process_s": 0.000355542,
-        "runtime_solver_s": 0.00182575,
-        "runtime_decision_procedure_s": 0.00185633
-      }
-    },
-    {
-      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0343947,
-        "size_program_expression": 917,
-        "slicing_removed_assignments": 443,
-        "vccs_generated": 68,
-        "vccs_remaining": 20,
-        "runtime_postprocess_equation_s": 0.000351083,
-        "runtime_convert_ssa_s": 0.00832284,
-        "runtime_post_process_s": 0.000324876,
-        "runtime_solver_s": 0.0253868,
-        "runtime_decision_procedure_s": 0.025467
-      }
-    },
-    {
-      "harness_id": "proofs::edit_validation_covers_tokens_revisions_and_sizes",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0306786,
-        "size_program_expression": 1083,
-        "slicing_removed_assignments": 538,
-        "vccs_generated": 112,
-        "vccs_remaining": 16,
-        "runtime_postprocess_equation_s": 0.000495917,
-        "runtime_convert_ssa_s": 0.00756042,
-        "runtime_post_process_s": 0.000340125,
-        "runtime_solver_s": 0.0171343,
-        "runtime_decision_procedure_s": 0.0172319
-      }
-    },
-    {
-      "harness_id": "proofs::rejects_a_false_definition_contract",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0180688,
-        "size_program_expression": 200,
-        "slicing_removed_assignments": 112,
-        "vccs_generated": 14,
-        "vccs_remaining": 2,
-        "runtime_postprocess_equation_s": 0.000150292,
-        "runtime_convert_ssa_s": 0.00470805,
-        "runtime_post_process_s": 0.000310542,
-        "runtime_solver_s": 0.00196075,
-        "runtime_decision_procedure_s": 0.00735476
-      }
-    },
-    {
-      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0298885,
-        "size_program_expression": 920,
-        "slicing_removed_assignments": 441,
-        "vccs_generated": 42,
-        "vccs_remaining": 12,
-        "runtime_postprocess_equation_s": 0.00038,
-        "runtime_convert_ssa_s": 0.00817059,
-        "runtime_post_process_s": 0.00032475,
-        "runtime_solver_s": 0.00542071,
-        "runtime_decision_procedure_s": 0.00547367
-      }
-    },
-    {
-      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0407214,
-        "size_program_expression": 1767,
-        "slicing_removed_assignments": 920,
-        "vccs_generated": 74,
-        "vccs_remaining": 20,
-        "runtime_postprocess_equation_s": 0.000432333,
-        "runtime_convert_ssa_s": 0.00891555,
-        "runtime_post_process_s": 0.000321375,
-        "runtime_solver_s": 0.00202433,
-        "runtime_decision_procedure_s": 0.00223063
-      }
-    },
-    {
-      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
-      "cbmc_metadata": {
-        "version": "6.11.0",
-        "os_info": "x86_64 linux unix"
-      },
-      "configuration": {
-        "object_bits": 16,
-        "solver": "cadical"
-      },
-      "cbmc_stats": {
-        "runtime_symex_s": 0.0403099,
-        "size_program_expression": 1516,
-        "slicing_removed_assignments": 785,
-        "vccs_generated": 103,
-        "vccs_remaining": 25,
-        "runtime_postprocess_equation_s": 0.000519125,
-        "runtime_convert_ssa_s": 0.0092918,
-        "runtime_post_process_s": 0.000340209,
-        "runtime_solver_s": 0.0462303,
-        "runtime_decision_procedure_s": 0.0463186
+        "runtime_symex_s": 2.57533,
+        "size_program_expression": 82204,
+        "slicing_removed_assignments": 69521,
+        "vccs_generated": 6682,
+        "vccs_remaining": 399,
+        "runtime_postprocess_equation_s": 0.0584242,
+        "runtime_convert_ssa_s": 0.16306,
+        "runtime_post_process_s": 0.000384376,
+        "runtime_solver_s": 0.0820801,
+        "runtime_decision_procedure_s": 0.0825625
       }
     },
     {
@@ -1798,20 +1376,20 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0162253,
+        "runtime_symex_s": 0.0174969,
         "size_program_expression": 244,
         "slicing_removed_assignments": 113,
         "vccs_generated": 8,
         "vccs_remaining": 8,
-        "runtime_postprocess_equation_s": 0.000284626,
-        "runtime_convert_ssa_s": 0.00515055,
-        "runtime_post_process_s": 0.000345625,
-        "runtime_solver_s": 0.0026185,
-        "runtime_decision_procedure_s": 0.002683
+        "runtime_postprocess_equation_s": 0.000326459,
+        "runtime_convert_ssa_s": 0.00559238,
+        "runtime_post_process_s": 0.000348834,
+        "runtime_solver_s": 0.00293755,
+        "runtime_decision_procedure_s": 0.00302129
       }
     },
     {
-      "harness_id": "proofs::archive_publication_requires_synced_objects_and_an_unchanged_head",
+      "harness_id": "proofs::rejects_a_false_mutation_admission_contract",
       "cbmc_metadata": {
         "version": "6.11.0",
         "os_info": "x86_64 linux unix"
@@ -1821,16 +1399,16 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0320273,
-        "size_program_expression": 1127,
-        "slicing_removed_assignments": 608,
-        "vccs_generated": 115,
-        "vccs_remaining": 15,
-        "runtime_postprocess_equation_s": 0.000262958,
-        "runtime_convert_ssa_s": 0.00738313,
-        "runtime_post_process_s": 0.000348292,
-        "runtime_solver_s": 0.00263217,
-        "runtime_decision_procedure_s": 0.00266625
+        "runtime_symex_s": 0.023123,
+        "size_program_expression": 289,
+        "slicing_removed_assignments": 193,
+        "vccs_generated": 14,
+        "vccs_remaining": 2,
+        "runtime_postprocess_equation_s": 0.000341334,
+        "runtime_convert_ssa_s": 0.00575722,
+        "runtime_post_process_s": 0.000371792,
+        "runtime_solver_s": 0.00187121,
+        "runtime_decision_procedure_s": 0.00844822
       }
     },
     {
@@ -1844,20 +1422,20 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0226853,
+        "runtime_symex_s": 0.0231709,
         "size_program_expression": 580,
         "slicing_removed_assignments": 246,
         "vccs_generated": 14,
         "vccs_remaining": 14,
-        "runtime_postprocess_equation_s": 0.000327751,
-        "runtime_convert_ssa_s": 0.00668759,
-        "runtime_post_process_s": 0.000339542,
-        "runtime_solver_s": 0.0629175,
-        "runtime_decision_procedure_s": 0.0629711
+        "runtime_postprocess_equation_s": 0.000312626,
+        "runtime_convert_ssa_s": 0.00675588,
+        "runtime_post_process_s": 0.00033575,
+        "runtime_solver_s": 0.0638638,
+        "runtime_decision_procedure_s": 0.0639104
       }
     },
     {
-      "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
+      "harness_id": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
       "cbmc_metadata": {
         "version": "6.11.0",
         "os_info": "x86_64 linux unix"
@@ -1867,16 +1445,292 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 2.44655,
-        "size_program_expression": 82204,
-        "slicing_removed_assignments": 69521,
-        "vccs_generated": 6682,
-        "vccs_remaining": 399,
-        "runtime_postprocess_equation_s": 0.0588864,
-        "runtime_convert_ssa_s": 0.156785,
-        "runtime_post_process_s": 0.000363042,
-        "runtime_solver_s": 0.0779243,
-        "runtime_decision_procedure_s": 0.0783714
+        "runtime_symex_s": 0.0335769,
+        "size_program_expression": 1270,
+        "slicing_removed_assignments": 607,
+        "vccs_generated": 22,
+        "vccs_remaining": 16,
+        "runtime_postprocess_equation_s": 0.000514126,
+        "runtime_convert_ssa_s": 0.00864118,
+        "runtime_post_process_s": 0.000341209,
+        "runtime_solver_s": 0.00357492,
+        "runtime_decision_procedure_s": 0.00365955
+      }
+    },
+    {
+      "harness_id": "proofs::fuzz_admission_requires_completed_nonempty_current_runs",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.030361,
+        "size_program_expression": 920,
+        "slicing_removed_assignments": 441,
+        "vccs_generated": 42,
+        "vccs_remaining": 12,
+        "runtime_postprocess_equation_s": 0.0003035,
+        "runtime_convert_ssa_s": 0.00773139,
+        "runtime_post_process_s": 0.000322084,
+        "runtime_solver_s": 0.00538755,
+        "runtime_decision_procedure_s": 0.00544951
+      }
+    },
+    {
+      "harness_id": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0271957,
+        "size_program_expression": 652,
+        "slicing_removed_assignments": 331,
+        "vccs_generated": 84,
+        "vccs_remaining": 12,
+        "runtime_postprocess_equation_s": 0.00022275,
+        "runtime_convert_ssa_s": 0.00665572,
+        "runtime_post_process_s": 0.000323542,
+        "runtime_solver_s": 0.00207488,
+        "runtime_decision_procedure_s": 0.00211446
+      }
+    },
+    {
+      "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0530611,
+        "size_program_expression": 2269,
+        "slicing_removed_assignments": 1347,
+        "vccs_generated": 90,
+        "vccs_remaining": 23,
+        "runtime_postprocess_equation_s": 0.000803751,
+        "runtime_convert_ssa_s": 0.0111953,
+        "runtime_post_process_s": 0.000314793,
+        "runtime_solver_s": 0.0681787,
+        "runtime_decision_procedure_s": 0.0682723
+      }
+    },
+    {
+      "harness_id": "proofs::inferred_https_never_overrides_local_file_intent",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0225528,
+        "size_program_expression": 558,
+        "slicing_removed_assignments": 242,
+        "vccs_generated": 10,
+        "vccs_remaining": 10,
+        "runtime_postprocess_equation_s": 0.000339,
+        "runtime_convert_ssa_s": 0.00598867,
+        "runtime_post_process_s": 0.000313875,
+        "runtime_solver_s": 0.00184754,
+        "runtime_decision_procedure_s": 0.00187742
+      }
+    },
+    {
+      "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0276727,
+        "size_program_expression": 399,
+        "slicing_removed_assignments": 196,
+        "vccs_generated": 42,
+        "vccs_remaining": 6,
+        "runtime_postprocess_equation_s": 0.000252458,
+        "runtime_convert_ssa_s": 0.00711572,
+        "runtime_post_process_s": 0.000424876,
+        "runtime_solver_s": 0.00146142,
+        "runtime_decision_procedure_s": 0.00151967
+      }
+    },
+    {
+      "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0239383,
+        "size_program_expression": 494,
+        "slicing_removed_assignments": 210,
+        "vccs_generated": 10,
+        "vccs_remaining": 10,
+        "runtime_postprocess_equation_s": 0.000359334,
+        "runtime_convert_ssa_s": 0.0065423,
+        "runtime_post_process_s": 0.000356376,
+        "runtime_solver_s": 0.00259063,
+        "runtime_decision_procedure_s": 0.00264005
+      }
+    },
+    {
+      "harness_id": "proofs::encoded_lengths_match_mathematical_sizes_without_overflow",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0411171,
+        "size_program_expression": 1516,
+        "slicing_removed_assignments": 785,
+        "vccs_generated": 103,
+        "vccs_remaining": 25,
+        "runtime_postprocess_equation_s": 0.000464709,
+        "runtime_convert_ssa_s": 0.00949839,
+        "runtime_post_process_s": 0.000299626,
+        "runtime_solver_s": 0.0468439,
+        "runtime_decision_procedure_s": 0.0469232
+      }
+    },
+    {
+      "harness_id": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0297762,
+        "size_program_expression": 691,
+        "slicing_removed_assignments": 351,
+        "vccs_generated": 84,
+        "vccs_remaining": 12,
+        "runtime_postprocess_equation_s": 0.00035625,
+        "runtime_convert_ssa_s": 0.00788064,
+        "runtime_post_process_s": 0.0003255,
+        "runtime_solver_s": 0.0029803,
+        "runtime_decision_procedure_s": 0.00306509
+      }
+    },
+    {
+      "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0309466,
+        "size_program_expression": 745,
+        "slicing_removed_assignments": 378,
+        "vccs_generated": 84,
+        "vccs_remaining": 12,
+        "runtime_postprocess_equation_s": 0.000359667,
+        "runtime_convert_ssa_s": 0.00727239,
+        "runtime_post_process_s": 0.000323959,
+        "runtime_solver_s": 0.00313355,
+        "runtime_decision_procedure_s": 0.00320155
+      }
+    },
+    {
+      "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0419531,
+        "size_program_expression": 1767,
+        "slicing_removed_assignments": 920,
+        "vccs_generated": 74,
+        "vccs_remaining": 20,
+        "runtime_postprocess_equation_s": 0.0004095,
+        "runtime_convert_ssa_s": 0.00925139,
+        "runtime_post_process_s": 0.000321084,
+        "runtime_solver_s": 0.00192388,
+        "runtime_decision_procedure_s": 0.002073
+      }
+    },
+    {
+      "harness_id": "proofs::edit_validation_covers_tokens_revisions_and_sizes",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0365152,
+        "size_program_expression": 1083,
+        "slicing_removed_assignments": 538,
+        "vccs_generated": 112,
+        "vccs_remaining": 16,
+        "runtime_postprocess_equation_s": 0.000528084,
+        "runtime_convert_ssa_s": 0.00883493,
+        "runtime_post_process_s": 0.000380375,
+        "runtime_solver_s": 0.0197868,
+        "runtime_decision_procedure_s": 0.0199304
+      }
+    },
+    {
+      "harness_id": "proofs::rejects_a_false_definition_contract",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0190061,
+        "size_program_expression": 200,
+        "slicing_removed_assignments": 112,
+        "vccs_generated": 14,
+        "vccs_remaining": 2,
+        "runtime_postprocess_equation_s": 0.000229084,
+        "runtime_convert_ssa_s": 0.00506942,
+        "runtime_post_process_s": 0.000479293,
+        "runtime_solver_s": 0.00195371,
+        "runtime_decision_procedure_s": 0.00775384
       }
     },
     {
@@ -1890,16 +1744,200 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0923309,
+        "runtime_symex_s": 0.0901719,
         "size_program_expression": 3573,
         "slicing_removed_assignments": 2212,
         "vccs_generated": 292,
         "vccs_remaining": 28,
-        "runtime_postprocess_equation_s": 0.001306,
-        "runtime_convert_ssa_s": 0.0192155,
-        "runtime_post_process_s": 0.000367042,
-        "runtime_solver_s": 0.128661,
-        "runtime_decision_procedure_s": 0.128805
+        "runtime_postprocess_equation_s": 0.0012185,
+        "runtime_convert_ssa_s": 0.0164056,
+        "runtime_post_process_s": 0.000344459,
+        "runtime_solver_s": 0.121936,
+        "runtime_decision_procedure_s": 0.122104
+      }
+    },
+    {
+      "harness_id": "proofs::rejects_a_false_write_contract",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0207173,
+        "size_program_expression": 231,
+        "slicing_removed_assignments": 141,
+        "vccs_generated": 14,
+        "vccs_remaining": 2,
+        "runtime_postprocess_equation_s": 0.000238792,
+        "runtime_convert_ssa_s": 0.00563505,
+        "runtime_post_process_s": 0.000328459,
+        "runtime_solver_s": 0.00175067,
+        "runtime_decision_procedure_s": 0.00825905
+      }
+    },
+    {
+      "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0338089,
+        "size_program_expression": 875,
+        "slicing_removed_assignments": 423,
+        "vccs_generated": 86,
+        "vccs_remaining": 14,
+        "runtime_postprocess_equation_s": 0.000427001,
+        "runtime_convert_ssa_s": 0.00781376,
+        "runtime_post_process_s": 0.000331334,
+        "runtime_solver_s": 0.00300434,
+        "runtime_decision_procedure_s": 0.00305267
+      }
+    },
+    {
+      "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.033638,
+        "size_program_expression": 917,
+        "slicing_removed_assignments": 443,
+        "vccs_generated": 68,
+        "vccs_remaining": 20,
+        "runtime_postprocess_equation_s": 0.000418959,
+        "runtime_convert_ssa_s": 0.0083133,
+        "runtime_post_process_s": 0.000349667,
+        "runtime_solver_s": 0.0252551,
+        "runtime_decision_procedure_s": 0.025332
+      }
+    },
+    {
+      "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0495465,
+        "size_program_expression": 2541,
+        "slicing_removed_assignments": 1335,
+        "vccs_generated": 120,
+        "vccs_remaining": 36,
+        "runtime_postprocess_equation_s": 0.000640501,
+        "runtime_convert_ssa_s": 0.0125005,
+        "runtime_post_process_s": 0.000316792,
+        "runtime_solver_s": 0.0615185,
+        "runtime_decision_procedure_s": 0.061655
+      }
+    },
+    {
+      "harness_id": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0238262,
+        "size_program_expression": 516,
+        "slicing_removed_assignments": 217,
+        "vccs_generated": 10,
+        "vccs_remaining": 10,
+        "runtime_postprocess_equation_s": 0.000372584,
+        "runtime_convert_ssa_s": 0.00618101,
+        "runtime_post_process_s": 0.000334376,
+        "runtime_solver_s": 0.00268146,
+        "runtime_decision_procedure_s": 0.00274304
+      }
+    },
+    {
+      "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0299715,
+        "size_program_expression": 692,
+        "slicing_removed_assignments": 347,
+        "vccs_generated": 85,
+        "vccs_remaining": 13,
+        "runtime_postprocess_equation_s": 0.000347501,
+        "runtime_convert_ssa_s": 0.00755759,
+        "runtime_post_process_s": 0.000329375,
+        "runtime_solver_s": 0.000226792,
+        "runtime_decision_procedure_s": 0.000278334
+      }
+    },
+    {
+      "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0298521,
+        "size_program_expression": 900,
+        "slicing_removed_assignments": 454,
+        "vccs_generated": 110,
+        "vccs_remaining": 14,
+        "runtime_postprocess_equation_s": 0.000295375,
+        "runtime_convert_ssa_s": 0.00692147,
+        "runtime_post_process_s": 0.000326125,
+        "runtime_solver_s": 0.00266721,
+        "runtime_decision_procedure_s": 0.0026975
+      }
+    },
+    {
+      "harness_id": "proofs::archive_publication_requires_synced_objects_and_an_unchanged_head",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0326679,
+        "size_program_expression": 1127,
+        "slicing_removed_assignments": 608,
+        "vccs_generated": 115,
+        "vccs_remaining": 15,
+        "runtime_postprocess_equation_s": 0.0003015,
+        "runtime_convert_ssa_s": 0.00759563,
+        "runtime_post_process_s": 0.000325751,
+        "runtime_solver_s": 0.00267059,
+        "runtime_decision_procedure_s": 0.00270805
       }
     },
     {
@@ -1913,33 +1951,125 @@
         "solver": "cadical"
       },
       "cbmc_stats": {
-        "runtime_symex_s": 0.0205408,
+        "runtime_symex_s": 0.0216352,
         "size_program_expression": 457,
         "slicing_removed_assignments": 195,
         "vccs_generated": 8,
         "vccs_remaining": 8,
-        "runtime_postprocess_equation_s": 0.0003215,
-        "runtime_convert_ssa_s": 0.00553355,
-        "runtime_post_process_s": 0.000321916,
-        "runtime_solver_s": 0.00250321,
-        "runtime_decision_procedure_s": 0.00255892
+        "runtime_postprocess_equation_s": 0.000285125,
+        "runtime_convert_ssa_s": 0.00597159,
+        "runtime_post_process_s": 0.00032325,
+        "runtime_solver_s": 0.00259613,
+        "runtime_decision_procedure_s": 0.00265396
+      }
+    },
+    {
+      "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0268377,
+        "size_program_expression": 628,
+        "slicing_removed_assignments": 318,
+        "vccs_generated": 84,
+        "vccs_remaining": 12,
+        "runtime_postprocess_equation_s": 0.00024775,
+        "runtime_convert_ssa_s": 0.00672609,
+        "runtime_post_process_s": 0.000327209,
+        "runtime_solver_s": 0.00281475,
+        "runtime_decision_procedure_s": 0.00284025
+      }
+    },
+    {
+      "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.166018,
+        "size_program_expression": 6733,
+        "slicing_removed_assignments": 3983,
+        "vccs_generated": 915,
+        "vccs_remaining": 482,
+        "runtime_postprocess_equation_s": 0.00610959,
+        "runtime_convert_ssa_s": 0.0279953,
+        "runtime_post_process_s": 0.00358688,
+        "runtime_solver_s": 0.124714,
+        "runtime_decision_procedure_s": 0.124989
+      }
+    },
+    {
+      "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0297273,
+        "size_program_expression": 1016,
+        "slicing_removed_assignments": 487,
+        "vccs_generated": 86,
+        "vccs_remaining": 14,
+        "runtime_postprocess_equation_s": 0.000307459,
+        "runtime_convert_ssa_s": 0.00726818,
+        "runtime_post_process_s": 0.000327875,
+        "runtime_solver_s": 0.00286984,
+        "runtime_decision_procedure_s": 0.00293042
+      }
+    },
+    {
+      "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
+      "cbmc_metadata": {
+        "version": "6.11.0",
+        "os_info": "x86_64 linux unix"
+      },
+      "configuration": {
+        "object_bits": 16,
+        "solver": "cadical"
+      },
+      "cbmc_stats": {
+        "runtime_symex_s": 0.0257059,
+        "size_program_expression": 721,
+        "slicing_removed_assignments": 315,
+        "vccs_generated": 22,
+        "vccs_remaining": 10,
+        "runtime_postprocess_equation_s": 0.000295126,
+        "runtime_convert_ssa_s": 0.00676247,
+        "runtime_post_process_s": 0.000328834,
+        "runtime_solver_s": 0.000061333,
+        "runtime_decision_procedure_s": 0.000145501
       }
     }
   ],
   "verification_results": {
     "summary": {
-      "total_harnesses": 29,
-      "executed": 29,
+      "total_harnesses": 31,
+      "executed": 31,
       "status": "completed",
-      "successful": 26,
+      "successful": 28,
       "failed": 3,
-      "duration_ms": 10778
+      "duration_ms": 11577
     },
     "results": [
       {
         "harness_id": "proofs::rejects_a_false_write_contract",
         "status": "Failure",
-        "duration_ms": 158,
+        "duration_ms": 172,
         "checks": [
           {
             "id": 1,
@@ -1948,7 +2078,7 @@
             "description": "\"negative-control: a writable edit must not be rejected\"",
             "location": {
               "file": "src/lib.rs",
-              "line": "744",
+              "line": "774",
               "column": "9"
             },
             "category": "assertion"
@@ -2114,7 +2244,7 @@
       {
         "harness_id": "proofs::rejects_a_false_definition_contract",
         "status": "Failure",
-        "duration_ms": 139,
+        "duration_ms": 148,
         "checks": [
           {
             "id": 1,
@@ -2123,7 +2253,7 @@
             "description": "\"negative-control: a retargeted label must not be kept silently\"",
             "location": {
               "file": "src/lib.rs",
-              "line": "733",
+              "line": "763",
               "column": "9"
             },
             "category": "assertion"
@@ -2135,7 +2265,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2147,7 +2277,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2159,7 +2289,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2171,7 +2301,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2183,7 +2313,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2195,7 +2325,7 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2207,7 +2337,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2219,7 +2349,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2231,7 +2361,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2243,7 +2373,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2255,7 +2385,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2267,7 +2397,297 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          }
+        ]
+      },
+      {
+        "harness_id": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+        "status": "Success",
+        "duration_ms": 172,
+        "checks": [
+          {
+            "id": 1,
+            "function": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+            "status": "Success",
+            "description": "assertion failed: allowed == has_library && (!has_path || in_library)",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "751",
+              "column": "9"
+            },
+            "category": "assertion"
+          },
+          {
+            "id": 2,
+            "function": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+            "status": "Satisfied",
+            "description": "cover condition: allowed && !has_path",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "752",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 3,
+            "function": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+            "status": "Satisfied",
+            "description": "cover condition: allowed && has_path",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "753",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 4,
+            "function": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+            "status": "Satisfied",
+            "description": "cover condition: !allowed && has_library",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "754",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 5,
+            "function": "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
+            "status": "Satisfied",
+            "description": "cover condition: !allowed && !has_library",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "755",
+              "column": "9"
+            },
+            "category": "cover"
+          }
+        ]
+      },
+      {
+        "harness_id": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+        "status": "Success",
+        "duration_ms": 191,
+        "checks": [
+          {
+            "id": 1,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Success",
+            "description": "assertion failed: action == AssetStore::Write == !exists",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "735",
+              "column": "9"
+            },
+            "category": "assertion"
+          },
+          {
+            "id": 2,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Success",
+            "description": "assertion failed: action == AssetStore::Keep == exists && same_content",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "736",
+              "column": "9"
+            },
+            "category": "assertion"
+          },
+          {
+            "id": 3,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Success",
+            "description": "assertion failed: action == AssetStore::Refuse == exists && !same_content",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "737",
+              "column": "9"
+            },
+            "category": "assertion"
+          },
+          {
+            "id": 4,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Satisfied",
+            "description": "cover condition: action == AssetStore::Write",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "738",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 5,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Satisfied",
+            "description": "cover condition: action == AssetStore::Keep",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "739",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 6,
+            "function": "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+            "status": "Satisfied",
+            "description": "cover condition: action == AssetStore::Refuse",
+            "location": {
+              "file": "src/lib.rs",
+              "line": "740",
+              "column": "9"
+            },
+            "category": "cover"
+          },
+          {
+            "id": 7,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer NULL",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 8,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer invalid",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 9,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: deallocated dynamic object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 10,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: dead object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 11,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer outside object bounds",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 12,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: invalid integer address",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 13,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer NULL",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 14,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer invalid",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 15,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: deallocated dynamic object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 16,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: dead object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 17,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer outside object bounds",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 18,
+            "function": "<celestite_core::AssetStore as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: invalid integer address",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "399",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -2277,94 +2697,10 @@
       {
         "harness_id": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
         "status": "Success",
-        "duration_ms": 695,
+        "duration_ms": 708,
         "checks": [
           {
             "id": 1,
-            "function": "std::option::Option::<&u8>::is_some_and::<{closure@celestite_core::label_verdict::{closure#0}}>",
-            "status": "Success",
-            "description": "unreachable code",
-            "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "660",
-              "column": "15"
-            },
-            "category": "unreachable"
-          },
-          {
-            "id": 2,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "unreachable code",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "310",
-              "column": "1"
-            },
-            "category": "unreachable"
-          },
-          {
-            "id": 3,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "attempt to add with overflow",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "319",
-              "column": "13"
-            },
-            "category": "assertion"
-          },
-          {
-            "id": 4,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "attempt to add with overflow",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "326",
-              "column": "26"
-            },
-            "category": "assertion"
-          },
-          {
-            "id": 5,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "attempt to add with overflow",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "329",
-              "column": "21"
-            },
-            "category": "assertion"
-          },
-          {
-            "id": 6,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "attempt to add with overflow",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "330",
-              "column": "21"
-            },
-            "category": "assertion"
-          },
-          {
-            "id": 7,
-            "function": "celestite_core::label_verdict",
-            "status": "Success",
-            "description": "attempt to add with overflow",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "338",
-              "column": "9"
-            },
-            "category": "assertion"
-          },
-          {
-            "id": 8,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -2376,7 +2712,7 @@
             "category": "assertion"
           },
           {
-            "id": 9,
+            "id": 2,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "attempt to add with overflow",
@@ -2388,7 +2724,7 @@
             "category": "assertion"
           },
           {
-            "id": 10,
+            "id": 3,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "attempt to add with overflow",
@@ -2400,7 +2736,7 @@
             "category": "assertion"
           },
           {
-            "id": 11,
+            "id": 4,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -2412,7 +2748,7 @@
             "category": "assertion"
           },
           {
-            "id": 12,
+            "id": 5,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "attempt to add with overflow",
@@ -2424,7 +2760,7 @@
             "category": "assertion"
           },
           {
-            "id": 13,
+            "id": 6,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "attempt to add with overflow",
@@ -2436,7 +2772,7 @@
             "category": "assertion"
           },
           {
-            "id": 14,
+            "id": 7,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict == LabelVerdict::LineEnding == line_ending",
@@ -2448,7 +2784,7 @@
             "category": "assertion"
           },
           {
-            "id": 15,
+            "id": 8,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict == LabelVerdict::UnescapedBracket == bracket",
@@ -2460,7 +2796,7 @@
             "category": "assertion"
           },
           {
-            "id": 16,
+            "id": 9,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict == LabelVerdict::Reserved == reserved",
@@ -2472,7 +2808,7 @@
             "category": "assertion"
           },
           {
-            "id": 17,
+            "id": 10,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict == LabelVerdict::Empty ==\n!line_ending && !bracket && !reserved && !content",
@@ -2484,7 +2820,7 @@
             "category": "assertion"
           },
           {
-            "id": 18,
+            "id": 11,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict == LabelVerdict::Valid ==\n!line_ending && !bracket && !reserved && content",
@@ -2496,7 +2832,7 @@
             "category": "assertion"
           },
           {
-            "id": 19,
+            "id": 12,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "assertion failed: verdict != LabelVerdict::TooLong",
@@ -2508,7 +2844,7 @@
             "category": "assertion"
           },
           {
-            "id": 20,
+            "id": 13,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Satisfied",
             "description": "cover condition: verdict == LabelVerdict::Valid",
@@ -2520,7 +2856,7 @@
             "category": "cover"
           },
           {
-            "id": 21,
+            "id": 14,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Satisfied",
             "description": "cover condition: verdict == LabelVerdict::Empty",
@@ -2532,7 +2868,7 @@
             "category": "cover"
           },
           {
-            "id": 22,
+            "id": 15,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -2544,7 +2880,7 @@
             "category": "assertion"
           },
           {
-            "id": 23,
+            "id": 16,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Satisfied",
             "description": "cover condition: verdict == LabelVerdict::UnescapedBracket && bytes[0] == b'\\\\'",
@@ -2556,7 +2892,7 @@
             "category": "cover"
           },
           {
-            "id": 24,
+            "id": 17,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Satisfied",
             "description": "cover condition: verdict == LabelVerdict::Reserved",
@@ -2568,7 +2904,7 @@
             "category": "cover"
           },
           {
-            "id": 25,
+            "id": 18,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -2580,7 +2916,7 @@
             "category": "assertion"
           },
           {
-            "id": 26,
+            "id": 19,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -2592,7 +2928,7 @@
             "category": "assertion"
           },
           {
-            "id": 27,
+            "id": 20,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Satisfied",
             "description": "cover condition: verdict == LabelVerdict::Valid && bytes[0] == b'\\\\' && bytes[1] == b']'",
@@ -2604,110 +2940,194 @@
             "category": "cover"
           },
           {
-            "id": 28,
-            "function": "std::option::Option::<&u8>::copied",
+            "id": 21,
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "unreachable code",
+            "description": "attempt to add with overflow",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2137",
-              "column": "15"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "323",
+              "column": "13"
             },
-            "category": "unreachable"
+            "category": "assertion"
           },
           {
-            "id": 29,
-            "function": "std::option::Option::<&u8>::is_some_and::<{closure@celestite_core::label_verdict::{closure#0}}>",
+            "id": 22,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "attempt to add with overflow",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "332",
+              "column": "21"
+            },
+            "category": "assertion"
+          },
+          {
+            "id": 23,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: pointer NULL",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 24,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: pointer invalid",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 25,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: deallocated dynamic object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 26,
+            "function": "celestite_core::label_verdict",
             "status": "Success",
             "description": "dereference failure: dead object",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "660",
-              "column": "15"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 27,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: pointer outside object bounds",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 28,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: invalid integer address",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "322",
+              "column": "26"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 29,
+            "function": "celestite_core::label_verdict",
+            "status": "Success",
+            "description": "dereference failure: pointer NULL",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 30,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: pointer invalid",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2137",
-              "column": "15"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 31,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 32,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 33,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 34,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "celestite_core::label_verdict",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "325",
+              "column": "9"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 35,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
+              "line": "1070",
+              "column": "25"
             },
             "category": "pointer_dereference"
           },
           {
             "id": 36,
-            "function": "std::option::Option::<&u8>::copied",
+            "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/option.rs",
-              "line": "2138",
-              "column": "19"
+              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
+              "line": "1070",
+              "column": "25"
             },
             "category": "pointer_dereference"
           },
@@ -2715,7 +3135,7 @@
             "id": 37,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2727,7 +3147,7 @@
             "id": 38,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2739,7 +3159,7 @@
             "id": 39,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2751,7 +3171,7 @@
             "id": 40,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2763,7 +3183,7 @@
             "id": 41,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2775,7 +3195,7 @@
             "id": 42,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2787,7 +3207,7 @@
             "id": 43,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2799,7 +3219,7 @@
             "id": 44,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2811,7 +3231,7 @@
             "id": 45,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2823,7 +3243,7 @@
             "id": 46,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1070",
@@ -2835,11 +3255,11 @@
             "id": 47,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1070",
-              "column": "25"
+              "line": "1071",
+              "column": "31"
             },
             "category": "pointer_dereference"
           },
@@ -2847,11 +3267,11 @@
             "id": 48,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1070",
-              "column": "25"
+              "line": "1071",
+              "column": "31"
             },
             "category": "pointer_dereference"
           },
@@ -2859,7 +3279,7 @@
             "id": 49,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2871,7 +3291,7 @@
             "id": 50,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2883,7 +3303,7 @@
             "id": 51,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2895,7 +3315,7 @@
             "id": 52,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2907,7 +3327,7 @@
             "id": 53,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2919,7 +3339,7 @@
             "id": 54,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2931,7 +3351,7 @@
             "id": 55,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2943,7 +3363,7 @@
             "id": 56,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2955,7 +3375,7 @@
             "id": 57,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2967,7 +3387,7 @@
             "id": 58,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1071",
@@ -2979,10 +3399,10 @@
             "id": 59,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1071",
+              "line": "1072",
               "column": "31"
             },
             "category": "pointer_dereference"
@@ -2991,10 +3411,10 @@
             "id": 60,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1071",
+              "line": "1072",
               "column": "31"
             },
             "category": "pointer_dereference"
@@ -3003,7 +3423,7 @@
             "id": 61,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3015,7 +3435,7 @@
             "id": 62,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3027,7 +3447,7 @@
             "id": 63,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3039,7 +3459,7 @@
             "id": 64,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3051,7 +3471,7 @@
             "id": 65,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3063,7 +3483,7 @@
             "id": 66,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3075,7 +3495,7 @@
             "id": 67,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3087,7 +3507,7 @@
             "id": 68,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3099,7 +3519,7 @@
             "id": 69,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3111,7 +3531,7 @@
             "id": 70,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1072",
@@ -3123,10 +3543,10 @@
             "id": 71,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1072",
+              "line": "1073",
               "column": "31"
             },
             "category": "pointer_dereference"
@@ -3135,10 +3555,10 @@
             "id": 72,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1072",
+              "line": "1073",
               "column": "31"
             },
             "category": "pointer_dereference"
@@ -3147,7 +3567,7 @@
             "id": 73,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3159,7 +3579,7 @@
             "id": 74,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3171,7 +3591,7 @@
             "id": 75,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3183,7 +3603,7 @@
             "id": 76,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3195,7 +3615,7 @@
             "id": 77,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3207,7 +3627,7 @@
             "id": 78,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3219,7 +3639,7 @@
             "id": 79,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3231,7 +3651,7 @@
             "id": 80,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3243,7 +3663,7 @@
             "id": 81,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
               "line": "1073",
@@ -3255,30 +3675,6 @@
             "id": 82,
             "function": "core::num::<impl u8>::is_ascii_punctuation",
             "status": "Success",
-            "description": "dereference failure: dead object",
-            "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1073",
-              "column": "31"
-            },
-            "category": "pointer_dereference"
-          },
-          {
-            "id": 83,
-            "function": "core::num::<impl u8>::is_ascii_punctuation",
-            "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
-            "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
-              "line": "1073",
-              "column": "31"
-            },
-            "category": "pointer_dereference"
-          },
-          {
-            "id": 84,
-            "function": "core::num::<impl u8>::is_ascii_punctuation",
-            "status": "Success",
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/num/mod.rs",
@@ -3288,7 +3684,7 @@
             "category": "pointer_dereference"
           },
           {
-            "id": 85,
+            "id": 83,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -3300,7 +3696,7 @@
             "category": "array_bounds"
           },
           {
-            "id": 86,
+            "id": 84,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -3312,7 +3708,7 @@
             "category": "array_bounds"
           },
           {
-            "id": 87,
+            "id": 85,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -3324,7 +3720,7 @@
             "category": "array_bounds"
           },
           {
-            "id": 88,
+            "id": 86,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "index out of bounds: the length is less than or equal to the given index",
@@ -3336,14 +3732,38 @@
             "category": "array_bounds"
           },
           {
-            "id": 89,
-            "function": "<usize as std::slice::SliceIndex<[u8]>>::get",
+            "id": 87,
+            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: pointer NULL",
             "location": {
-              "file": "/home/runner/.rustup/toolchains/nightly-2026-08-21-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/slice/index.rs",
-              "line": "188",
-              "column": "13"
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "292",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 88,
+            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: pointer invalid",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "292",
+              "column": "34"
+            },
+            "category": "pointer_dereference"
+          },
+          {
+            "id": 89,
+            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
+            "status": "Success",
+            "description": "dereference failure: deallocated dynamic object",
+            "location": {
+              "file": "/workspace/crates/note-core/src/lib.rs",
+              "line": "292",
+              "column": "34"
             },
             "category": "pointer_dereference"
           },
@@ -3351,7 +3771,7 @@
             "id": 90,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3363,7 +3783,7 @@
             "id": 91,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3375,7 +3795,7 @@
             "id": 92,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
+            "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3387,7 +3807,7 @@
             "id": 93,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: dead object",
+            "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3399,7 +3819,7 @@
             "id": 94,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
+            "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3411,7 +3831,7 @@
             "id": 95,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: invalid integer address",
+            "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3423,7 +3843,7 @@
             "id": 96,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: pointer NULL",
+            "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3435,7 +3855,7 @@
             "id": 97,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: pointer invalid",
+            "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
               "line": "292",
@@ -3447,42 +3867,6 @@
             "id": 98,
             "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
             "status": "Success",
-            "description": "dereference failure: deallocated dynamic object",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "292",
-              "column": "34"
-            },
-            "category": "pointer_dereference"
-          },
-          {
-            "id": 99,
-            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
-            "status": "Success",
-            "description": "dereference failure: dead object",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "292",
-              "column": "34"
-            },
-            "category": "pointer_dereference"
-          },
-          {
-            "id": 100,
-            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
-            "status": "Success",
-            "description": "dereference failure: pointer outside object bounds",
-            "location": {
-              "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "292",
-              "column": "34"
-            },
-            "category": "pointer_dereference"
-          },
-          {
-            "id": 101,
-            "function": "<celestite_core::LabelVerdict as std::cmp::PartialEq>::eq",
-            "status": "Success",
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
@@ -3492,19 +3876,19 @@
             "category": "pointer_dereference"
           },
           {
-            "id": 102,
+            "id": 99,
             "function": "celestite_core::label_verdict",
             "status": "Success",
             "description": "unwinding assertion loop 0",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "317",
+              "line": "320",
               "column": "5"
             },
             "category": "unwind"
           },
           {
-            "id": 103,
+            "id": 100,
             "function": "proofs::labels_accept_exactly_balanced_nonempty_single_line_text",
             "status": "Success",
             "description": "unwinding assertion loop 0",
@@ -3520,7 +3904,7 @@
       {
         "harness_id": "proofs::definition_separators_never_let_a_definition_interrupt_a_paragraph",
         "status": "Success",
-        "duration_ms": 183,
+        "duration_ms": 207,
         "checks": [
           {
             "id": 1,
@@ -3613,7 +3997,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3625,7 +4009,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3637,7 +4021,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3649,7 +4033,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3661,7 +4045,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3673,7 +4057,7 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3685,7 +4069,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3697,7 +4081,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3709,7 +4093,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3721,7 +4105,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3733,7 +4117,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3745,7 +4129,7 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "366",
+              "line": "368",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3755,7 +4139,7 @@
       {
         "harness_id": "proofs::definitions_append_once_and_never_retarget_a_label",
         "status": "Success",
-        "duration_ms": 167,
+        "duration_ms": 192,
         "checks": [
           {
             "id": 1,
@@ -3836,7 +4220,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3848,7 +4232,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3860,7 +4244,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3872,7 +4256,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3884,7 +4268,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3896,7 +4280,7 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3908,7 +4292,7 @@
             "description": "dereference failure: pointer NULL",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3920,7 +4304,7 @@
             "description": "dereference failure: pointer invalid",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3932,7 +4316,7 @@
             "description": "dereference failure: deallocated dynamic object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3944,7 +4328,7 @@
             "description": "dereference failure: dead object",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3956,7 +4340,7 @@
             "description": "dereference failure: pointer outside object bounds",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3968,7 +4352,7 @@
             "description": "dereference failure: invalid integer address",
             "location": {
               "file": "/workspace/crates/note-core/src/lib.rs",
-              "line": "349",
+              "line": "351",
               "column": "34"
             },
             "category": "pointer_dereference"
@@ -3978,7 +4362,7 @@
       {
         "harness_id": "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
         "status": "Success",
-        "duration_ms": 158,
+        "duration_ms": 172,
         "checks": [
           {
             "id": 1,
@@ -4045,7 +4429,7 @@
       {
         "harness_id": "proofs::edit_validation_covers_tokens_revisions_and_sizes",
         "status": "Success",
-        "duration_ms": 226,
+        "duration_ms": 254,
         "checks": [
           {
             "id": 1,
@@ -4292,7 +4676,7 @@
       {
         "harness_id": "proofs::open_target_preserves_every_nonempty_or_named_document",
         "status": "Success",
-        "duration_ms": 153,
+        "duration_ms": 180,
         "checks": [
           {
             "id": 1,
@@ -4479,7 +4863,7 @@
       {
         "harness_id": "proofs::write_decision_covers_every_revision_and_disk_state",
         "status": "Success",
-        "duration_ms": 177,
+        "duration_ms": 193,
         "checks": [
           {
             "id": 1,
@@ -4714,7 +5098,7 @@
       {
         "harness_id": "proofs::proof_admission_rejects_every_incomplete_or_unbound_run",
         "status": "Success",
-        "duration_ms": 344,
+        "duration_ms": 362,
         "checks": [
           {
             "id": 1,
@@ -5981,7 +6365,7 @@
       {
         "harness_id": "proofs::byte_budgets_reject_overflow_and_every_oversized_append",
         "status": "Success",
-        "duration_ms": 259,
+        "duration_ms": 248,
         "checks": [
           {
             "id": 1,
@@ -6636,7 +7020,7 @@
       {
         "harness_id": "proofs::arbitrary_finite_edit_save_sequences_preserve_revision_invariants",
         "status": "Success",
-        "duration_ms": 529,
+        "duration_ms": 513,
         "checks": [
           {
             "id": 1,
@@ -8167,7 +8551,7 @@
       {
         "harness_id": "proofs::revision_transitions_preserve_bounds_and_saved_progress",
         "status": "Success",
-        "duration_ms": 371,
+        "duration_ms": 399,
         "checks": [
           {
             "id": 1,
@@ -9194,7 +9578,7 @@
       {
         "harness_id": "proofs::recovery_metadata_never_constructs_an_invalid_document_state",
         "status": "Success",
-        "duration_ms": 224,
+        "duration_ms": 231,
         "checks": [
           {
             "id": 1,
@@ -9976,7 +10360,7 @@
       {
         "harness_id": "proofs::close_requires_the_exact_current_note_and_revision",
         "status": "Success",
-        "duration_ms": 173,
+        "duration_ms": 178,
         "checks": [
           {
             "id": 1,
@@ -10187,7 +10571,7 @@
       {
         "harness_id": "proofs::application_exit_waits_for_live_notes_and_pending_cleanup",
         "status": "Success",
-        "duration_ms": 167,
+        "duration_ms": 171,
         "checks": [
           {
             "id": 1,
@@ -10410,7 +10794,7 @@
       {
         "harness_id": "proofs::rejects_a_false_mutation_admission_contract",
         "status": "Failure",
-        "duration_ms": 147,
+        "duration_ms": 158,
         "checks": [
           {
             "id": 1,
@@ -10669,7 +11053,7 @@
       {
         "harness_id": "proofs::mutation_admission_rejects_missing_stale_or_interrupted_results",
         "status": "Success",
-        "duration_ms": 285,
+        "duration_ms": 292,
         "checks": [
           {
             "id": 1,
@@ -11468,7 +11852,7 @@
       {
         "harness_id": "proofs::archive_graph_extensions_require_fresh_identity_and_complete_parents",
         "status": "Success",
-        "duration_ms": 149,
+        "duration_ms": 156,
         "checks": [
           {
             "id": 1,
@@ -11523,7 +11907,7 @@
       {
         "harness_id": "proofs::archive_repairs_require_matching_sources_and_valid_byte_spans",
         "status": "Success",
-        "duration_ms": 229,
+        "duration_ms": 231,
         "checks": [
           {
             "id": 1,
@@ -11614,7 +11998,7 @@
       {
         "harness_id": "proofs::archive_publication_requires_synced_objects_and_an_unchanged_head",
         "status": "Success",
-        "duration_ms": 195,
+        "duration_ms": 197,
         "checks": [
           {
             "id": 1,
@@ -11897,7 +12281,7 @@
       {
         "harness_id": "proofs::archive_merge_preserves_every_concurrent_change",
         "status": "Success",
-        "duration_ms": 181,
+        "duration_ms": 179,
         "checks": [
           {
             "id": 1,
@@ -12583,7 +12967,7 @@
       {
         "harness_id": "proofs::archive_object_ids_accept_exactly_the_complete_fixed_width_representation",
         "status": "Success",
-        "duration_ms": 4315,
+        "duration_ms": 4515,
         "checks": [
           {
             "id": 1,
@@ -14654,7 +15038,7 @@
       {
         "harness_id": "proofs::archive_object_id_lengths_cover_every_machine_integer",
         "status": "Success",
-        "duration_ms": 141,
+        "duration_ms": 149,
         "checks": [
           {
             "id": 1,
@@ -14709,7 +15093,7 @@
       {
         "harness_id": "proofs::editor_capture_acknowledges_only_its_selected_unconflicted_source",
         "status": "Success",
-        "duration_ms": 168,
+        "duration_ms": 171,
         "checks": [
           {
             "id": 1,
@@ -14932,7 +15316,7 @@
       {
         "harness_id": "proofs::navigation_requires_the_exact_source_and_a_bounded_position",
         "status": "Success",
-        "duration_ms": 222,
+        "duration_ms": 211,
         "checks": [
           {
             "id": 1,
@@ -15167,7 +15551,7 @@
       {
         "harness_id": "proofs::inferred_https_never_overrides_local_file_intent",
         "status": "Success",
-        "duration_ms": 158,
+        "duration_ms": 162,
         "checks": [
           {
             "id": 1,

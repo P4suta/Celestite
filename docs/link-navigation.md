@@ -18,6 +18,15 @@ The completion is the only Markdown Celestite writes on your behalf, it is appli
 A definition you write by hand anywhere in the note is honored; the first definition for a label wins.
 A missing identifier-named note reports that it is not in the library.
 
+## Adding media
+
+Paste an image or drop files onto the window to store them in the library's `assets/` folder under their SHA-256 digest and insert `![name]` with its definition at the caret.
+The label is the file name without its extension, or `image` for an unnamed paste, and it is written as one undoable edit.
+Supported types are the PDF, PNG, JPEG, GIF, WebP, AVIF, HEIC, MP3, M4A, WAV, MP4, and MOV extensions, written in lowercase with `jpeg` as `jpg`.
+The same bytes are stored once, and a different file already named by that digest is refused rather than replaced.
+Pasted media stop at 64 MiB; drop larger files instead.
+Media need a configured library and a note that is untitled or already inside it.
+
 - Relative `.md`, `.markdown`, and `.txt` destinations open in another note window.
 - A `#heading` link moves within the current buffer.
 - Another note's `#heading` fragment positions its initial caret at that heading.

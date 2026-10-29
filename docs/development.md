@@ -22,6 +22,7 @@ New notes start with front matter holding their lowercase, hyphenated UUIDv7 ide
 The library is the `Celestite` folder in the documents directory unless the `library` preference names another folder; its `assets/` folder holds media named by content digest.
 The window title and file menu show the note's first level-one heading when it has one.
 Type `[` and a word to link another library note by title; see [link navigation](link-navigation.md) for the reference-definition form this writes.
+Paste an image or drop files onto the window to store them in `assets/` by digest and insert an image reference at the caret.
 The identity belongs to the document and survives edits, cancelled save dialogs, and recovery.
 Without a configured library, untitled drafts are checkpointed locally and still require a Save As destination to become a Markdown file.
 On a conflict, Reload replaces the local buffer with the file on disk, while Save As keeps the local text in another file.

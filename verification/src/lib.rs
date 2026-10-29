@@ -725,6 +725,36 @@ mod proofs {
         kani::cover!(verdict == LabelVerdict::Valid && bytes[0] == b'\\' && bytes[1] == b']');
     }
 
+    #[kani::proof]
+    #[kani::unwind(1)]
+    fn media_are_written_once_kept_when_identical_and_never_overwritten() {
+        use celestite_core::{AssetStore, plan_asset_store};
+        let exists: bool = kani::any();
+        let same_content: bool = kani::any();
+        let action = plan_asset_store(exists, same_content);
+        assert_eq!(action == AssetStore::Write, !exists);
+        assert_eq!(action == AssetStore::Keep, exists && same_content);
+        assert_eq!(action == AssetStore::Refuse, exists && !same_content);
+        kani::cover!(action == AssetStore::Write);
+        kani::cover!(action == AssetStore::Keep);
+        kani::cover!(action == AssetStore::Refuse);
+    }
+
+    #[kani::proof]
+    #[kani::unwind(1)]
+    fn media_links_require_a_library_and_a_note_without_a_path_or_inside_it() {
+        use celestite_core::media_link_allowed;
+        let has_library: bool = kani::any();
+        let has_path: bool = kani::any();
+        let in_library: bool = kani::any();
+        let allowed = media_link_allowed(has_library, has_path, in_library);
+        assert_eq!(allowed, has_library && (!has_path || in_library));
+        kani::cover!(allowed && !has_path);
+        kani::cover!(allowed && has_path);
+        kani::cover!(!allowed && has_library);
+        kani::cover!(!allowed && !has_library);
+    }
+
     #[cfg(feature = "negative-control")]
     #[kani::proof]
     #[kani::unwind(1)]

@@ -425,6 +425,7 @@ dependencies = [
 name = "celestite"
 version = "0.1.0"
 dependencies = [
+ "celestite-archive",
  "celestite-core",
  "celestite-documents",
  "serde",
