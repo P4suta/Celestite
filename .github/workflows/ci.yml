@@ -1,0 +1,73 @@
+name: ci
+on:
+  pull_request:
+  merge_group:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Report the checked-out source
+        shell: bash
+        run: git log -1 --format='commit=%H%ntree=%T'
+      - name: Report the native admission boundary
+        shell: bash
+        run: |
+          printf '%s\n' 'The local pre-push gate runs the project checks on the owner'"'"'s machine.' 'CI reports the checked-out source and does not rerun or attest those checks.'
+  dependencies:
+    name: dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Leave the owner's changes to the local gate
+        if: github.event_name != 'pull_request' || github.event.pull_request.user.login == github.repository_owner
+        shell: bash
+        run: |
+          printf '%s\n' 'The local pre-push gate checks the owner'"'"'s changes, so this job checks only pull requests from others, such as Renovate updates.'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != github.repository_owner
+        with:
+          persist-credentials: false
+      - name: Install the Tauri Linux prerequisites
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != github.repository_owner
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libwebkit2gtk-4.1-dev build-essential curl wget file libxdo-dev libssl-dev libayatana-appindicator3-dev librsvg2-dev
+      - uses: jdx/mise-action@fc42bcc7ddbf51124c30f95a877a0c5168a3bfde
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != github.repository_owner
+        with:
+          version: v2026.10.11
+          sha256: f9612efcddda0ae55b62d3b6f82a6c860d5b54ebee0807d4f1a1d578055e1607
+          install_args: rust node aqua:pnpm/pnpm just
+          cache: false
+      - name: Install the pinned packages
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != github.repository_owner
+        shell: bash
+        run: mise x -- pnpm install --frozen-lockfile
+      - name: Lint, typecheck, and test the updated dependencies
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != github.repository_owner
+        shell: bash
+        run: mise x -- just lint typecheck test
+  required:
+    name: required
+    needs: [check, dependencies]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Refuse a missing, skipped, failed, or cancelled job
+        shell: bash
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          [[ "$RESULTS" =~ ^success( success)*$ ]]
