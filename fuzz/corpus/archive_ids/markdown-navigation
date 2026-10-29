@@ -1,0 +1,10 @@
+[jump](#日本語-1)
+[reference][note]
+![media](image.png)
+<https://example.com>
+
+[note]: other%20note.md#heading
+
+# 日本語
+# 日本語
+`[code](#hidden)`

@@ -1,0 +1,6 @@
+name = "Celestite"
+summary = "A quiet, monochrome Markdown notepad with a centered writing line"
+install = "mise install\nmise x -- pnpm install --frozen-lockfile"
+usage = "mise x -- just dev"
+copyright = "Yasunobu"
+license = "MIT OR Apache-2.0"

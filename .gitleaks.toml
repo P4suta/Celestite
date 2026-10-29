@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Dependencies, generated files, and local build artifacts"
+paths = [
+  '''(^|/)(node_modules|target|dist|\.git|gen|icons|test-results|playwright-report)/''',
+]

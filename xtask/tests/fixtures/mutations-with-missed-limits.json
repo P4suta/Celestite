@@ -1,0 +1,5697 @@
+{
+  "outcomes": [
+    {
+      "scenario": "Baseline",
+      "summary": "Success",
+      "log_path": "log/baseline.log",
+      "diff_path": null,
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 5.240601332,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.914962576,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:52:5: replace admit_proof_run -> ProofAdmission with Default::default()",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 52,
+              "column": 5
+            },
+            "end": {
+              "line": 80,
+              "column": 26
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_52_col_5.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_52_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.609786939,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:52:29: replace || with && in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 52,
+              "column": 29
+            },
+            "end": {
+              "line": 52,
+              "column": 31
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_52_col_29.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_52_col_29.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.4464813539999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.294676251,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:52:24: replace == with != in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 52,
+              "column": 24
+            },
+            "end": {
+              "line": 52,
+              "column": 26
+            }
+          },
+          "replacement": "!=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_52_col_24.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_52_col_24.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.6443607999999998,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.292459249,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:52:59: replace == with != in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 52,
+              "column": 59
+            },
+            "end": {
+              "line": 52,
+              "column": 61
+            }
+          },
+          "replacement": "!=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_52_col_59.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_52_col_59.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.9349491300000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.389818637,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:58:8: delete ! in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 58,
+              "column": 8
+            },
+            "end": {
+              "line": 58,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_58_col_8.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_58_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.666079405,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.281051071,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:61:8: delete ! in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 61,
+              "column": 8
+            },
+            "end": {
+              "line": 61,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_61_col_8.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_61_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.410249901,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.276449941,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:67:9: replace || with && in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 67,
+              "column": 9
+            },
+            "end": {
+              "line": 67,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_67_col_9.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_67_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.351908218,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.355478229,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:66:9: replace || with && in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 66,
+              "column": 9
+            },
+            "end": {
+              "line": 66,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_66_col_9.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_66_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.668624825,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.329484286,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:65:9: replace || with && in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 65,
+              "column": 9
+            },
+            "end": {
+              "line": 65,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_65_col_9.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_65_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.760365207,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.378862209,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:64:30: replace != with == in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 64,
+              "column": 30
+            },
+            "end": {
+              "line": 64,
+              "column": 32
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_64_col_30.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_64_col_30.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.833315279,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.355988853,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:65:37: replace != with == in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 65,
+              "column": 37
+            },
+            "end": {
+              "line": 65,
+              "column": 39
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_65_col_37.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_65_col_37.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.669627117,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.289983163,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:66:35: replace != with == in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 66,
+              "column": 35
+            },
+            "end": {
+              "line": 66,
+              "column": 37
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_66_col_35.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_66_col_35.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.495965945,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.278794193,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:67:35: replace != with == in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 67,
+              "column": 35
+            },
+            "end": {
+              "line": 67,
+              "column": 37
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_67_col_35.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_67_col_35.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.445609852,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.292620707,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:71:8: delete ! in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 71,
+              "column": 8
+            },
+            "end": {
+              "line": 71,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_71_col_8.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_71_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.600157132,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.276311816,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:74:8: delete ! in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 74,
+              "column": 8
+            },
+            "end": {
+              "line": 74,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_74_col_8.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_74_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.360363643,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.286819243,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/assurance-core/src/lib.rs:77:8: delete ! in admit_proof_run",
+          "package": "celestite-assurance-core",
+          "file": "crates/assurance-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_proof_run",
+            "return_type": "-> ProofAdmission",
+            "span": {
+              "start": {
+                "line": 47,
+                "column": 1
+              },
+              "end": {
+                "line": 81,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 77,
+              "column": 8
+            },
+            "end": {
+              "line": 77,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__assurance-core__src__lib.rs_line_77_col_8.log",
+      "diff_path": "diff/crates__assurance-core__src__lib.rs_line_77_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.579808361,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.297057837,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:13:45: replace * with +",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": null,
+          "span": {
+            "start": {
+              "line": 13,
+              "column": 45
+            },
+            "end": {
+              "line": 13,
+              "column": 46
+            }
+          },
+          "replacement": "+",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "MissedMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_13_col_45.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_13_col_45.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 3.223660827,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.732956561,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:13:45: replace * with /",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": null,
+          "span": {
+            "start": {
+              "line": 13,
+              "column": 45
+            },
+            "end": {
+              "line": 13,
+              "column": 46
+            }
+          },
+          "replacement": "/",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "MissedMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_13_col_45_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_13_col_45_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.005249409,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.824944777,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:13:38: replace * with +",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": null,
+          "span": {
+            "start": {
+              "line": 13,
+              "column": 38
+            },
+            "end": {
+              "line": 13,
+              "column": 39
+            }
+          },
+          "replacement": "+",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "MissedMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_13_col_38.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_13_col_38.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.033219561,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.820068898,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:13:38: replace * with /",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": null,
+          "span": {
+            "start": {
+              "line": 13,
+              "column": 38
+            },
+            "end": {
+              "line": 13,
+              "column": 39
+            }
+          },
+          "replacement": "/",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_13_col_38_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_13_col_38_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.82685944,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:18:5: replace checked_byte_length -> Option<usize> with None",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 18,
+              "column": 5
+            },
+            "end": {
+              "line": 21,
+              "column": 6
+            }
+          },
+          "replacement": "None",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_18_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_18_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.336554321,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.390820054,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:18:5: replace checked_byte_length -> Option<usize> with Some(0)",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 18,
+              "column": 5
+            },
+            "end": {
+              "line": 21,
+              "column": 6
+            }
+          },
+          "replacement": "Some(0)",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_18_col_5_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_18_col_5_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.896445551,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.346847803,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:18:5: replace checked_byte_length -> Option<usize> with Some(1)",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 18,
+              "column": 5
+            },
+            "end": {
+              "line": 21,
+              "column": 6
+            }
+          },
+          "replacement": "Some(1)",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_18_col_5_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_18_col_5_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.7438957739999998,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.325880698,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:19:24: replace match guard total <= limit with true in checked_byte_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 19,
+              "column": 24
+            },
+            "end": {
+              "line": 19,
+              "column": 38
+            }
+          },
+          "replacement": "true",
+          "genre": "MatchArmGuard"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_19_col_24.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_19_col_24.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.003978949,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.340842255,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:19:24: replace match guard total <= limit with false in checked_byte_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 19,
+              "column": 24
+            },
+            "end": {
+              "line": 19,
+              "column": 38
+            }
+          },
+          "replacement": "false",
+          "genre": "MatchArmGuard"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_19_col_24_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_19_col_24_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.966032453,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.344873718,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:19:30: replace <= with > in checked_byte_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "checked_byte_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "line": 22,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 19,
+              "column": 30
+            },
+            "end": {
+              "line": 19,
+              "column": 32
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_19_col_30.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_19_col_30.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.940237636,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.329456327,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:45:9: replace RevisionState::restore -> Option<Self> with None",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::restore",
+            "return_type": "-> Option<Self>",
+            "span": {
+              "start": {
+                "line": 44,
+                "column": 5
+              },
+              "end": {
+                "line": 50,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 45,
+              "column": 9
+            },
+            "end": {
+              "line": 49,
+              "column": 10
+            }
+          },
+          "replacement": "None",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_45_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_45_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.034137979,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.341744131,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:45:9: replace RevisionState::restore -> Option<Self> with Some(Default::default())",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::restore",
+            "return_type": "-> Option<Self>",
+            "span": {
+              "start": {
+                "line": 44,
+                "column": 5
+              },
+              "end": {
+                "line": 50,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 45,
+              "column": 9
+            },
+            "end": {
+              "line": 49,
+              "column": 10
+            }
+          },
+          "replacement": "Some(Default::default())",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_45_col_9_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_45_col_9_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.692206896,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:45:41: replace && with || in RevisionState::restore",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::restore",
+            "return_type": "-> Option<Self>",
+            "span": {
+              "start": {
+                "line": 44,
+                "column": 5
+              },
+              "end": {
+                "line": 50,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 45,
+              "column": 41
+            },
+            "end": {
+              "line": 45,
+              "column": 43
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_45_col_41.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_45_col_41.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.88405283,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.348912639,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:45:20: replace <= with > in RevisionState::restore",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::restore",
+            "return_type": "-> Option<Self>",
+            "span": {
+              "start": {
+                "line": 44,
+                "column": 5
+              },
+              "end": {
+                "line": 50,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 45,
+              "column": 20
+            },
+            "end": {
+              "line": 45,
+              "column": 22
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_45_col_20.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_45_col_20.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.933862837,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.356860313,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:45:50: replace <= with > in RevisionState::restore",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::restore",
+            "return_type": "-> Option<Self>",
+            "span": {
+              "start": {
+                "line": 44,
+                "column": 5
+              },
+              "end": {
+                "line": 50,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 45,
+              "column": 50
+            },
+            "end": {
+              "line": 45,
+              "column": 52
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_45_col_50.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_45_col_50.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.821987894,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.334249999,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:53:9: replace RevisionState::current -> u64 with 0",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::current",
+            "return_type": "-> u64",
+            "span": {
+              "start": {
+                "line": 52,
+                "column": 5
+              },
+              "end": {
+                "line": 54,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 53,
+              "column": 9
+            },
+            "end": {
+              "line": 53,
+              "column": 21
+            }
+          },
+          "replacement": "0",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_53_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_53_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.903258599,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.338012544,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:53:9: replace RevisionState::current -> u64 with 1",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::current",
+            "return_type": "-> u64",
+            "span": {
+              "start": {
+                "line": 52,
+                "column": 5
+              },
+              "end": {
+                "line": 54,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 53,
+              "column": 9
+            },
+            "end": {
+              "line": 53,
+              "column": 21
+            }
+          },
+          "replacement": "1",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_53_col_9_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_53_col_9_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.7401050200000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.355172436,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:56:9: replace RevisionState::saved -> u64 with 0",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::saved",
+            "return_type": "-> u64",
+            "span": {
+              "start": {
+                "line": 55,
+                "column": 5
+              },
+              "end": {
+                "line": 57,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 56,
+              "column": 9
+            },
+            "end": {
+              "line": 56,
+              "column": 19
+            }
+          },
+          "replacement": "0",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_56_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_56_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.87402482,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.329120535,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:56:9: replace RevisionState::saved -> u64 with 1",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::saved",
+            "return_type": "-> u64",
+            "span": {
+              "start": {
+                "line": 55,
+                "column": 5
+              },
+              "end": {
+                "line": 57,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 56,
+              "column": 9
+            },
+            "end": {
+              "line": 56,
+              "column": 19
+            }
+          },
+          "replacement": "1",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_56_col_9_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_56_col_9_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.717755832,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.331372079,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:59:9: replace RevisionState::is_dirty -> bool with true",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::is_dirty",
+            "return_type": "-> bool",
+            "span": {
+              "start": {
+                "line": 58,
+                "column": 5
+              },
+              "end": {
+                "line": 60,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 59,
+              "column": 9
+            },
+            "end": {
+              "line": 59,
+              "column": 35
+            }
+          },
+          "replacement": "true",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_59_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_59_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.914695153,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.335783042,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:59:9: replace RevisionState::is_dirty -> bool with false",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::is_dirty",
+            "return_type": "-> bool",
+            "span": {
+              "start": {
+                "line": 58,
+                "column": 5
+              },
+              "end": {
+                "line": 60,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 59,
+              "column": 9
+            },
+            "end": {
+              "line": 59,
+              "column": 35
+            }
+          },
+          "replacement": "false",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_59_col_9_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_59_col_9_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.957219028,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.346668302,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:59:22: replace != with == in RevisionState::is_dirty",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::is_dirty",
+            "return_type": "-> bool",
+            "span": {
+              "start": {
+                "line": 58,
+                "column": 5
+              },
+              "end": {
+                "line": 60,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 59,
+              "column": 22
+            },
+            "end": {
+              "line": 59,
+              "column": 24
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_59_col_22.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_59_col_22.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.829414859,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.294877127,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:62:9: replace RevisionState::mark_saved -> Self with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::mark_saved",
+            "return_type": "-> Self",
+            "span": {
+              "start": {
+                "line": 61,
+                "column": 5
+              },
+              "end": {
+                "line": 66,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 62,
+              "column": 9
+            },
+            "end": {
+              "line": 65,
+              "column": 10
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_62_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_62_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.689171268,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:75:9: replace RevisionState::edit -> EditTransition with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "RevisionState::edit",
+            "return_type": "-> EditTransition",
+            "span": {
+              "start": {
+                "line": 68,
+                "column": 5
+              },
+              "end": {
+                "line": 90,
+                "column": 6
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 75,
+              "column": 9
+            },
+            "end": {
+              "line": 89,
+              "column": 10
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_75_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_75_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.698590027,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:5: replace plan_close -> CloseDecision with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 5
+            },
+            "end": {
+              "line": 110,
+              "column": 6
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.698883694,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:46: replace && with || in plan_close",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 46
+            },
+            "end": {
+              "line": 106,
+              "column": 48
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_46.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_46.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8677451889999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.278934694,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:22: replace && with || in plan_close",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 22
+            },
+            "end": {
+              "line": 106,
+              "column": 24
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_22.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_22.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.7322388869999998,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.288153828,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:33: replace == with != in plan_close",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 33
+            },
+            "end": {
+              "line": 106,
+              "column": 35
+            }
+          },
+          "replacement": "!=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_33.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_33.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.717702415,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.29838963,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:58: replace || with && in plan_close",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 58
+            },
+            "end": {
+              "line": 106,
+              "column": 60
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_58.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_58.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.705065611,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.289645663,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:106:61: delete ! in plan_close",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_close",
+            "return_type": "-> CloseDecision",
+            "span": {
+              "start": {
+                "line": 99,
+                "column": 1
+              },
+              "end": {
+                "line": 111,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 106,
+              "column": 61
+            },
+            "end": {
+              "line": 106,
+              "column": 62
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_106_col_61.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_106_col_61.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8643750190000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.289822455,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:5: replace encoded_length -> Option<usize> with None",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 5
+            },
+            "end": {
+              "line": 133,
+              "column": 6
+            }
+          },
+          "replacement": "None",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.960053697,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.286944244,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:5: replace encoded_length -> Option<usize> with Some(0)",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 5
+            },
+            "end": {
+              "line": 133,
+              "column": 6
+            }
+          },
+          "replacement": "Some(0)",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_5_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_5_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.883142396,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.27960561,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:5: replace encoded_length -> Option<usize> with Some(1)",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 5
+            },
+            "end": {
+              "line": 133,
+              "column": 6
+            }
+          },
+          "replacement": "Some(1)",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_5_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_5_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.7305934299999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.297143963,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:17: replace > with == in encoded_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 17
+            },
+            "end": {
+              "line": 119,
+              "column": 18
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_17.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_17.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.905562295,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.286418409,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:17: replace > with < in encoded_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 17
+            },
+            "end": {
+              "line": 119,
+              "column": 18
+            }
+          },
+          "replacement": "<",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_17_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_17_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.878039722,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.328058915,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:119:17: replace > with >= in encoded_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 119,
+              "column": 17
+            },
+            "end": {
+              "line": 119,
+              "column": 18
+            }
+          },
+          "replacement": ">=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_119_col_17_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_119_col_17_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.938077249,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.28945558,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:129:15: replace <= with > in encoded_length",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "encoded_length",
+            "return_type": "-> Option<usize>",
+            "span": {
+              "start": {
+                "line": 113,
+                "column": 1
+              },
+              "end": {
+                "line": 134,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 129,
+              "column": 15
+            },
+            "end": {
+              "line": 129,
+              "column": 17
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_129_col_15.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_129_col_15.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.9025517920000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.302229094,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:150:5: replace admit_recovery -> Option<RevisionState> with None",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 150,
+              "column": 5
+            },
+            "end": {
+              "line": 157,
+              "column": 65
+            }
+          },
+          "replacement": "None",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_150_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_150_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.9430574630000002,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.296995505,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:150:5: replace admit_recovery -> Option<RevisionState> with Some(Default::default())",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 150,
+              "column": 5
+            },
+            "end": {
+              "line": 157,
+              "column": 65
+            }
+          },
+          "replacement": "Some(Default::default())",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_150_col_5_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_150_col_5_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.624234628,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:153:9: replace || with && in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 153,
+              "column": 9
+            },
+            "end": {
+              "line": 153,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_153_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_153_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8688731710000002,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.288859579,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:152:9: replace || with && in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 152,
+              "column": 9
+            },
+            "end": {
+              "line": 152,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_152_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_152_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.802210928,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.293066251,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:151:9: replace || with && in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 151,
+              "column": 9
+            },
+            "end": {
+              "line": 151,
+              "column": 11
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_151_col_9.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_151_col_9.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8154077339999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.322989659,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:150:21: replace != with == in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 150,
+              "column": 21
+            },
+            "end": {
+              "line": 150,
+              "column": 23
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_150_col_21.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_150_col_21.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.7685938060000002,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.321490492,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:151:29: replace > with == in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 151,
+              "column": 29
+            },
+            "end": {
+              "line": 151,
+              "column": 30
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_151_col_29.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_151_col_29.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.880525392,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.319035947,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:151:29: replace > with < in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 151,
+              "column": 29
+            },
+            "end": {
+              "line": 151,
+              "column": 30
+            }
+          },
+          "replacement": "<",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_151_col_29_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_151_col_29_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8777353479999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.330672335,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:151:29: replace > with >= in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 151,
+              "column": 29
+            },
+            "end": {
+              "line": 151,
+              "column": 30
+            }
+          },
+          "replacement": ">=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_151_col_29_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_151_col_29_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.885498273,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.32464337,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:152:27: replace != with == in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 152,
+              "column": 27
+            },
+            "end": {
+              "line": 152,
+              "column": 29
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_152_col_27.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_152_col_27.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.89639441,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.319408614,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:153:28: replace && with || in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 153,
+              "column": 28
+            },
+            "end": {
+              "line": 153,
+              "column": 30
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_153_col_28.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_153_col_28.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.730911639,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.272511519,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:153:31: delete ! in admit_recovery",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "admit_recovery",
+            "return_type": "-> Option<RevisionState>",
+            "span": {
+              "start": {
+                "line": 149,
+                "column": 1
+              },
+              "end": {
+                "line": 158,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 153,
+              "column": 31
+            },
+            "end": {
+              "line": 153,
+              "column": 32
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_153_col_31.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_153_col_31.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.9697577019999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.381187935,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:5: replace plan_edit -> EditDecision with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 5
+            },
+            "end": {
+              "line": 183,
+              "column": 6
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.744445015,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:23: replace || with && in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 23
+            },
+            "end": {
+              "line": 175,
+              "column": 25
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_23.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_23.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.480461284,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.382551936,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:8: delete ! in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 8
+            },
+            "end": {
+              "line": 175,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_8.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.178081106,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.344631184,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:37: replace < with == in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 37
+            },
+            "end": {
+              "line": 175,
+              "column": 38
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_37.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_37.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 2.045861497,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.283484573,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:37: replace < with > in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 37
+            },
+            "end": {
+              "line": 175,
+              "column": 38
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_37_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_37_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.800081093,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.294504836,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:175:37: replace < with <= in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 175,
+              "column": 37
+            },
+            "end": {
+              "line": 175,
+              "column": 38
+            }
+          },
+          "replacement": "<=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_175_col_37_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_175_col_37_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.921610772,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.355355238,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:46: replace || with && in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 46
+            },
+            "end": {
+              "line": 177,
+              "column": 48
+            }
+          },
+          "replacement": "&&",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_46.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_46.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.949451763,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.290154164,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:26: replace > with == in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 26
+            },
+            "end": {
+              "line": 177,
+              "column": 27
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_26.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_26.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.829216543,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.304750889,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:26: replace > with < in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 26
+            },
+            "end": {
+              "line": 177,
+              "column": 27
+            }
+          },
+          "replacement": "<",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_26_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_26_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8334630889999999,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.279933153,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:26: replace > with >= in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 26
+            },
+            "end": {
+              "line": 177,
+              "column": 27
+            }
+          },
+          "replacement": ">=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_26_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_26_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.826810331,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.332239837,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:74: replace && with || in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 74
+            },
+            "end": {
+              "line": 177,
+              "column": 76
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_74.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_74.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.850671192,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.294581044,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:177:61: replace == with != in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 177,
+              "column": 61
+            },
+            "end": {
+              "line": 177,
+              "column": 63
+            }
+          },
+          "replacement": "!=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_177_col_61.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_177_col_61.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.757480543,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.299500966,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:179:21: replace > with == in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 179,
+              "column": 21
+            },
+            "end": {
+              "line": 179,
+              "column": 22
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_179_col_21.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_179_col_21.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.837069592,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.338276218,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:179:21: replace > with < in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 179,
+              "column": 21
+            },
+            "end": {
+              "line": 179,
+              "column": 22
+            }
+          },
+          "replacement": "<",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_179_col_21_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_179_col_21_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.828347416,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.27925611,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:179:21: replace > with >= in plan_edit",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_edit",
+            "return_type": "-> EditDecision",
+            "span": {
+              "start": {
+                "line": 168,
+                "column": 1
+              },
+              "end": {
+                "line": 184,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 179,
+              "column": 21
+            },
+            "end": {
+              "line": 179,
+              "column": 22
+            }
+          },
+          "replacement": ">=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_179_col_21_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_179_col_21_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8646188320000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.299833758,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:204:5: replace plan_write -> WriteDecision with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_write",
+            "return_type": "-> WriteDecision",
+            "span": {
+              "start": {
+                "line": 199,
+                "column": 1
+              },
+              "end": {
+                "line": 212,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 204,
+              "column": 5
+            },
+            "end": {
+              "line": 211,
+              "column": 6
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_204_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_204_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.635793183,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:204:19: replace < with == in plan_write",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_write",
+            "return_type": "-> WriteDecision",
+            "span": {
+              "start": {
+                "line": 199,
+                "column": 1
+              },
+              "end": {
+                "line": 212,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 204,
+              "column": 19
+            },
+            "end": {
+              "line": 204,
+              "column": 20
+            }
+          },
+          "replacement": "==",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_204_col_19.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_204_col_19.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8075625180000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.344671351,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:204:19: replace < with > in plan_write",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_write",
+            "return_type": "-> WriteDecision",
+            "span": {
+              "start": {
+                "line": 199,
+                "column": 1
+              },
+              "end": {
+                "line": 212,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 204,
+              "column": 19
+            },
+            "end": {
+              "line": 204,
+              "column": 20
+            }
+          },
+          "replacement": ">",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_204_col_19_001.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_204_col_19_001.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.788837955,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.33322688,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:204:19: replace < with <= in plan_write",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "plan_write",
+            "return_type": "-> WriteDecision",
+            "span": {
+              "start": {
+                "line": 199,
+                "column": 1
+              },
+              "end": {
+                "line": 212,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 204,
+              "column": 19
+            },
+            "end": {
+              "line": 204,
+              "column": 20
+            }
+          },
+          "replacement": "<=",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_204_col_19_002.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_204_col_19_002.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.815883861,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.352677694,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:221:5: replace open_target -> OpenTarget with Default::default()",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "open_target",
+            "return_type": "-> OpenTarget",
+            "span": {
+              "start": {
+                "line": 220,
+                "column": 1
+              },
+              "end": {
+                "line": 226,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 221,
+              "column": 5
+            },
+            "end": {
+              "line": 225,
+              "column": 6
+            }
+          },
+          "replacement": "Default::default()",
+          "genre": "FnValue"
+        }
+      },
+      "summary": "Unviable",
+      "log_path": "log/crates__note-core__src__lib.rs_line_221_col_5.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_221_col_5.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 0.639967104,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:221:18: replace && with || in open_target",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "open_target",
+            "return_type": "-> OpenTarget",
+            "span": {
+              "start": {
+                "line": 220,
+                "column": 1
+              },
+              "end": {
+                "line": 226,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 221,
+              "column": 18
+            },
+            "end": {
+              "line": 221,
+              "column": 20
+            }
+          },
+          "replacement": "||",
+          "genre": "BinaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_221_col_18.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_221_col_18.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.8382334660000001,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.399279113,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": {
+        "Mutant": {
+          "name": "crates/note-core/src/lib.rs:221:8: delete ! in open_target",
+          "package": "celestite-core",
+          "file": "crates/note-core/src/lib.rs",
+          "function": {
+            "function_name": "open_target",
+            "return_type": "-> OpenTarget",
+            "span": {
+              "start": {
+                "line": 220,
+                "column": 1
+              },
+              "end": {
+                "line": 226,
+                "column": 2
+              }
+            }
+          },
+          "span": {
+            "start": {
+              "line": 221,
+              "column": 8
+            },
+            "end": {
+              "line": 221,
+              "column": 9
+            }
+          },
+          "replacement": "",
+          "genre": "UnaryOperator"
+        }
+      },
+      "summary": "CaughtMutant",
+      "log_path": "log/crates__note-core__src__lib.rs_line_221_col_8.log",
+      "diff_path": "diff/crates__note-core__src__lib.rs_line_221_col_8.diff",
+      "phase_results": [
+        {
+          "phase": "Build",
+          "duration": 1.718954424,
+          "process_status": "Success",
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--no-run",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        },
+        {
+          "phase": "Test",
+          "duration": 0.345343428,
+          "process_status": {
+            "Failure": 101
+          },
+          "argv": [
+            "/usr/local/rustup/toolchains/1.99.0-x86_64-unknown-linux-gnu/bin/cargo",
+            "test",
+            "--verbose",
+            "--package=celestite-assurance-core@0.1.0",
+            "--package=celestite-core@0.1.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "total_mutants": 87,
+  "missed": 3,
+  "caught": 74,
+  "timeout": 0,
+  "unviable": 10,
+  "success": 0,
+  "start_time": "2026-10-26T00:26:51.045251635Z",
+  "end_time": "2026-10-26T00:29:53.740242055Z",
+  "cargo_mutants_version": "27.1.0"
+}

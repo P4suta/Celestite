@@ -1,0 +1,8 @@
+[graph]
+targets = ["aarch64-apple-darwin"]
+
+[advisories]
+db-path = "target/advisory-dbs"
+unmaintained = "all"
+unsound = "all"
+maximum-db-staleness = "P7D"

@@ -1,0 +1,434 @@
+:root {
+  font-family: "Inter", sans-serif;
+  color-scheme: light;
+  --paper: #fff;
+  --ink: #000;
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-appearance="dark"] {
+  color-scheme: dark;
+  --paper: #000;
+  --ink: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  overflow: hidden;
+}
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+button {
+  appearance: none;
+  border: 0;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+button:disabled:focus-visible {
+  outline: none;
+}
+:where(button:hover, button:focus-visible) > :where(span:first-child) {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+::selection {
+  color: var(--paper);
+  background: var(--ink);
+}
+main {
+  height: 100dvh;
+}
+
+header {
+  position: absolute;
+  z-index: 3;
+  inset: 0 0 auto;
+  height: 52px;
+  display: grid;
+  grid-template-columns: 96px 1fr 96px;
+  align-items: center;
+  padding-inline: 20px;
+  background: var(--paper);
+  visibility: hidden;
+}
+header.revealed {
+  visibility: visible;
+}
+.window-controls {
+  display: flex;
+  gap: 11px;
+  padding-left: 2px;
+}
+.window-controls button {
+  width: 12px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+}
+.window-controls span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+}
+.window-controls :where(button:hover, button:focus-visible) :where(span) {
+  background: var(--ink);
+}
+.filename {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  min-width: 0;
+  font-size: 12px;
+  line-height: 18px;
+}
+.filename > span:first-child {
+  max-width: 184px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.filename .unsaved {
+  font-weight: 700;
+}
+.asset {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+.asset img {
+  display: block;
+}
+.chevron {
+  width: 10px;
+  height: 10px;
+}
+[data-appearance="dark"] .asset img {
+  filter: invert(1);
+}
+
+.editor-host {
+  position: absolute;
+  inset: 48px 0;
+}
+.cm-editor {
+  height: 100%;
+  color: var(--ink);
+  background: var(--paper);
+}
+.cm-editor.cm-focused {
+  outline: none;
+}
+.cm-editor .cm-scroller {
+  font:
+    400 17px / 30px "IBM Plex Mono",
+    "Noto Sans JP",
+    monospace;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.cm-scroller::-webkit-scrollbar {
+  display: none;
+}
+.cm-editor .cm-content {
+  width: min(720px, calc(100% - 96px));
+  min-width: 0;
+  flex-grow: 0;
+  margin-inline: auto;
+  padding-block: calc(50dvh - 63px);
+  caret-color: var(--ink);
+}
+.cm-editor .cm-line {
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+.cm-editor .cm-cursor,
+.cm-editor .cm-dropCursor {
+  border-left: 1px solid var(--ink);
+}
+.cm-editor .cm-selectionBackground,
+.cm-editor.cm-focused .cm-selectionBackground {
+  background: var(--ink);
+}
+.cm-editor .cm-selectionLayer {
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+.cm-editor .cm-selectionLayer .cm-selectionBackground {
+  background: #fff;
+}
+.cm-editor .cm-searchMatch {
+  background: none;
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.cm-editor .cm-searchMatch-selected {
+  font-weight: 700;
+}
+.cm-editor .cm-panels {
+  display: none;
+}
+
+.cm-tooltip.cm-tooltip-autocomplete.note-completion {
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: none;
+  border-radius: 0;
+  font:
+    400 13px / 20px "Inter",
+    sans-serif;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion > ul {
+  max-width: 360px;
+  max-height: 240px;
+  font-family: inherit;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion > ul > li {
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion > ul > li[aria-selected] {
+  color: var(--ink);
+  background: var(--paper);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion .cm-completionLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion .cm-completionDetail {
+  font-style: normal;
+  font-size: 12px;
+  margin-left: 0;
+  flex-shrink: 0;
+}
+.cm-tooltip.cm-tooltip-autocomplete.note-completion .cm-completionMatchedText {
+  text-decoration: none;
+}
+
+.file-menu {
+  position: absolute;
+  z-index: 4;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 272px;
+  padding: 14px 8px 10px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  font-size: 13px;
+  line-height: 20px;
+}
+.file-menu button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;
+  padding: 4px 10px;
+  text-align: left;
+  gap: 12px;
+}
+.file-menu button:focus-visible {
+  outline: none;
+}
+:where(.file-menu button:focus-visible) > :where(span:first-child) {
+  text-decoration-thickness: 1px;
+}
+.file-metadata {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 10px;
+  gap: 4px;
+}
+.file-metadata strong,
+.file-metadata > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.file-metadata > span {
+  font-size: 12px;
+  line-height: 18px;
+}
+.file-menu hr {
+  margin: 8px 0;
+  border: 0;
+  border-top: 1px solid var(--ink);
+}
+kbd,
+.selection-label {
+  font:
+    400 12px / 18px "Inter",
+    sans-serif;
+  white-space: nowrap;
+}
+.menu-label {
+  display: block;
+  padding: 0 10px 4px;
+  font-size: 12px;
+  line-height: 18px;
+}
+[aria-checked="true"] > span:first-child {
+  font-weight: 700;
+}
+.recent-files {
+  max-height: min(360px, calc(100dvh - 150px));
+  overflow: auto;
+}
+.recent-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.empty-recent {
+  margin: 12px 10px;
+}
+
+.find-bar {
+  position: absolute;
+  top: 58px;
+  right: 24px;
+  z-index: 2;
+  width: 368px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--ink);
+  padding: 12px 14px;
+  background: var(--paper);
+  font-size: 12px;
+  line-height: 18px;
+}
+.find-bar input {
+  width: 150px;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: none;
+  padding: 0;
+  line-height: 20px;
+}
+.find-bar input::placeholder {
+  color: var(--ink);
+  opacity: 1;
+}
+.find-bar input:focus-visible {
+  outline: none;
+}
+.find-bar output {
+  margin-left: auto;
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: right;
+}
+.find-bar button {
+  width: 16px;
+  height: 20px;
+}
+.find-bar button:hover,
+.find-bar button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--ink);
+}
+
+.notice {
+  position: absolute;
+  z-index: 5;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, calc(100% - 96px));
+  padding: 18px 20px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  font-size: 13px;
+  line-height: 21px;
+}
+:where(.notice) p {
+  margin: 6px 0 14px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.notice-actions {
+  display: flex;
+  gap: 20px;
+}
+.notice button,
+.dialog-actions button {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+dialog {
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  padding: 24px;
+  max-width: min(480px, calc(100% - 96px));
+}
+dialog::backdrop {
+  background: transparent;
+}
+dialog h1 {
+  font-size: 15px;
+  line-height: 24px;
+  margin: 0 0 8px;
+}
+dialog p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 21px;
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 24px;
+  font-size: 13px;
+}
+.dialog-actions .primary {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  header {
+    grid-template-columns: 76px 1fr 76px;
+  }
+  .filename > span:first-child {
+    max-width: 160px;
+  }
+}

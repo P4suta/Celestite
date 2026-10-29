@@ -1,0 +1,40 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.6.3/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/node_modules",
+      "!**/target",
+      "!**/dist",
+      "!**/test-results",
+      "!**/playwright-report",
+      "!**/src-tauri/gen",
+      "!**/pnpm-lock.yaml",
+      "!**/Cargo.lock",
+      "!src/assets/*.svg"
+    ]
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": { "enabled": true }
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "overrides": [{ "includes": ["**/*.md"], "formatter": { "enabled": false } }],
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "recommended"
+    }
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
+  }
+}

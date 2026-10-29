@@ -1,0 +1,24 @@
+[package]
+name = "celestite-fuzz"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+celestite-archive = { path = "../crates/archive" }
+celestite-core = { path = "../crates/note-core" }
+serde_json = "1"
+
+[[bin]]
+name = "archive_ids"
+path = "fuzz_targets/archive_ids.rs"
+test = false
+doc = false
+bench = false
+
+[workspace]
+members = ["."]
