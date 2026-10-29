@@ -61,6 +61,8 @@ export function frontMatterEnd(text: string): number {
 export interface CompletionHooks {
   readonly candidates: (query: string) => Promise<LinkCandidate[]>;
   readonly chosen: (context: LinkContext, target: LinkTarget, candidate: LinkCandidate) => void;
+  /** Receives the files of a paste at the caret so the session can store them as media. */
+  readonly media: (files: readonly File[], caret: number) => void;
 }
 
 const SHORT_ID_LENGTH = 8;

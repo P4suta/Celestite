@@ -36,7 +36,9 @@ No harness replaces production functions with stubs.
 | A library file is written only for an untitled note with a nonempty body while a library is configured | `NoteStore::place_in_library` and `library_write` | All eight Boolean input combinations; real first-checkpoint placement, standalone, and IPC tests |
 | A link label is accepted exactly when it is nonempty, single-line, bracket-balanced, not caret-prefixed, and within 999 scalars | `plan_link_patch` and `label_verdict` | Every four-byte label shape in Kani; Japanese, escaped, and boundary-length labels in tests |
 | A definition is appended once, kept for the same destination, and never retargeted silently | `plan_link_patch` and `plan_definition` | Complete Boolean decision with its exact negative control; duplicate-label and idempotence tests |
-| An appended definition never interrupts a paragraph | `plan_link_patch` and `definition_separator` | All sixteen Boolean input combinations; trailing-block, CRLF, and front-matter-only corpus |
+| An appended definition never interrupts a paragraph | `plan_link_patch` and `definition_separator` | All sixteen Boolean input combinations; trailing-block, CRLF, front-matter-only, and end-of-note insertion corpus |
+| Media are written once, kept when identical, and never overwritten under a colliding digest name | `NoteStore::store_asset` and `plan_asset_store` | All four Boolean input combinations; real deduplication, collision, and extension cases |
+| A media link needs a library and a note without a path or inside that library | `NoteStore::may_link_media` and `media_link_allowed` | All eight Boolean input combinations; untitled, placed, and standalone notes in store and IPC tests |
 
 The proof target is `x86_64-unknown-linux-gnu`, including 64-bit `usize` and `u64` semantics.
 The native preview currently targets `aarch64-apple-darwin`, with the same scalar widths.
@@ -94,6 +96,7 @@ This campaign uses `--sanitizer none`; it is bounded parser exploration, not an 
 - Definition tests cover first and subsequent definitions, CRLF, escaped and Japanese labels, refused positions in code and front matter, the 16 MiB boundary, and the reparse postcondition that rejects an insertion which would not parse as a shortcut link.
 - Title tests cover ATX and setext headings, inline code, BOM, CRLF, excluded front matter and fences, and the library index follows external additions, edits, deletions, identifier mismatches, and ranking.
 - Browser completion checks open the monochrome list on an unclosed bracket, insert the label and definition as one undoable change, dismiss on Escape, stay silent inside code spans, complete images, and show a refused label as a dismissible error.
+- Media checks store pasted bytes once by digest through the raw IPC body, normalize `JPEG` to `jpg`, refuse a 64 MiB overflow, an unsupported type, a colliding digest name, and a standalone note, and the browser pastes a synthetic PNG, undoes its reference, places a natively dropped file at the caret, and shows refusals as notices.
 - Navigation tests cover CommonMark references, escaped destinations, Unicode and percent-encoded fragments, duplicate heading identifiers, UTF-16 boundaries, parent paths, current-buffer headings, unsupported protocols, and nonexecutable attachment types.
 - The actual standalone executable performs import, verification, export, restore, and checkout in a fresh temporary directory.
 - Index tests check native writer exclusion, snapshot changes, literal wildcard queries, and reconstruction from corrupt cache bytes.

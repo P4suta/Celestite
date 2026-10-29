@@ -589,7 +589,12 @@ impl Vault {
     }
 }
 
-pub(crate) fn copy_hashed(
+/// Copies `input` to `output` while hashing it, refusing streams beyond the asset limit.
+///
+/// # Errors
+///
+/// Returns `TooLarge` past 4 GiB and any I/O failure of either side.
+pub fn copy_hashed(
     input: &mut impl Read,
     output: &mut impl Write,
 ) -> Result<ObjectId, ArchiveError> {

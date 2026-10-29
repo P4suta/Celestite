@@ -43,14 +43,15 @@ export const linkEditSchema = v.object({
   patches: v.array(linkPatchSchema),
   caret: revision,
 });
+const digest = v.pipe(v.string(), v.regex(/^[0-9a-f]{64}$/u));
+const extension = v.pipe(v.string(), v.regex(/^[a-z0-9]{1,16}$/u));
 export const linkTargetSchema = v.variant("kind", [
   v.object({ kind: v.literal("note"), id: v.pipe(v.string(), v.uuid()) }),
-  v.object({
-    kind: v.literal("asset"),
-    digest: v.pipe(v.string(), v.regex(/^[0-9a-f]{64}$/u)),
-    extension: v.pipe(v.string(), v.regex(/^[a-z0-9]{1,16}$/u)),
-  }),
+  v.object({ kind: v.literal("asset"), digest, extension }),
 ]);
+export const assetReceiptSchema = v.object({ digest, extension });
+export const assetDropSchema = v.object({ digest, extension, label: v.string() });
+export const assetFailureSchema = v.object({ message: v.string() });
 export const bootstrapSchema = v.pipe(
   v.object({
     document: documentSchema,
@@ -81,6 +82,8 @@ export type LinkCandidate = v.InferOutput<typeof linkCandidateSchema>;
 export type LinkPatch = v.InferOutput<typeof linkPatchSchema>;
 export type LinkEdit = v.InferOutput<typeof linkEditSchema>;
 export type LinkTarget = v.InferOutput<typeof linkTargetSchema>;
+export type AssetReceipt = v.InferOutput<typeof assetReceiptSchema>;
+export type AssetDrop = v.InferOutput<typeof assetDropSchema>;
 export type Unsubscribe = () => void;
 export interface EditRequest {
   readonly token: string;
@@ -116,6 +119,7 @@ export interface DesktopBridge {
     target: LinkTarget,
     image: boolean,
   ): Promise<LinkEdit>;
+  storeAsset(bytes: Uint8Array, extension: string): Promise<AssetReceipt>;
   newWindow(): Promise<void>;
   inspect(token: string): Promise<boolean>;
   reload(token: string): Promise<NoteDocument>;
@@ -128,6 +132,8 @@ export interface DesktopBridge {
   maximize(): Promise<void>;
   onClose(handler: () => void): Promise<Unsubscribe>;
   onPreferences(handler: (preferences: Preferences) => void): Promise<Unsubscribe>;
+  onAssetDropped(handler: (drop: AssetDrop) => void): Promise<Unsubscribe>;
+  onAssetFailed(handler: (message: string) => void): Promise<Unsubscribe>;
 }
 
 export class DesktopError extends Error {

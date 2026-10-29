@@ -27,6 +27,7 @@ fn invoke_handler<R: tauri::Runtime>()
         commands::follow_link,
         commands::list_library_notes,
         commands::insert_link,
+        commands::store_asset,
         commands::new_document,
         commands::inspect_document,
         commands::reload_document,
@@ -130,6 +131,11 @@ pub fn run() -> Result<(), tauri::Error> {
                     }
                     Err(error) => eprintln!("Could not remove closed window state: {error}"),
                 },
+                WindowEvent::DragDrop(tauri::DragDropEvent::Drop { paths, .. }) => {
+                    let window = window.clone();
+                    let paths = paths.clone();
+                    tauri::async_runtime::spawn(commands::receive_dropped_files(window, paths));
+                }
                 _ => {}
             }
         })

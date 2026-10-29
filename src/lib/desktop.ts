@@ -6,6 +6,11 @@ import * as v from "valibot";
 
 import {
   type Appearance,
+  type AssetDrop,
+  type AssetReceipt,
+  assetDropSchema,
+  assetFailureSchema,
+  assetReceiptSchema,
   type Bootstrap,
   bootstrapSchema,
   type DesktopBridge,
@@ -28,6 +33,7 @@ import {
 } from "./contracts";
 
 const filters = [{ name: "Markdown and text", extensions: ["md", "markdown", "txt"] }];
+const ASSET_EXTENSION_HEADER = "celestite-extension";
 
 export class TauriBridge implements DesktopBridge {
   public async bootstrap(): Promise<Bootstrap> {
@@ -74,6 +80,15 @@ export class TauriBridge implements DesktopBridge {
         edit,
         link: { from: range.from, to: range.to, words, image },
         target,
+      }),
+    );
+  }
+
+  public async storeAsset(bytes: Uint8Array, extension: string): Promise<AssetReceipt> {
+    return v.parse(
+      assetReceiptSchema,
+      await invoke<unknown>("store_asset", bytes, {
+        headers: { [ASSET_EXTENSION_HEADER]: extension },
       }),
     );
   }
@@ -128,5 +143,27 @@ export class TauriBridge implements DesktopBridge {
       const result = v.safeParse(preferencesSchema, event.payload);
       if (result.success) handler(result.output);
     });
+  }
+
+  public async onAssetDropped(handler: (drop: AssetDrop) => void): Promise<Unsubscribe> {
+    return listen<unknown>(
+      "celestite:asset-dropped",
+      (event) => {
+        const result = v.safeParse(assetDropSchema, event.payload);
+        if (result.success) handler(result.output);
+      },
+      { target: getCurrentWindow().label },
+    );
+  }
+
+  public async onAssetFailed(handler: (message: string) => void): Promise<Unsubscribe> {
+    return listen<unknown>(
+      "celestite:asset-failed",
+      (event) => {
+        const result = v.safeParse(assetFailureSchema, event.payload);
+        if (result.success) handler(result.output.message);
+      },
+      { target: getCurrentWindow().label },
+    );
   }
 }

@@ -1,13 +1,18 @@
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use celestite_documents::{
-    Appearance, Document, DocumentSnapshot, LinkCandidate, LinkDestination, LinkEdit,
-    LinkInsertion, LinkNavigation, Preferences,
+    Appearance, AssetReceipt, AssetSource, Document, DocumentSnapshot, LinkCandidate,
+    LinkDestination, LinkEdit, LinkInsertion, LinkNavigation, NoteStore, Preferences,
 };
 
 const MAX_ASSET_EXTENSION_LENGTH: usize = 16;
+pub(crate) const MAX_PASTED_ASSET_BYTES: usize = 64 * 1024 * 1024;
+const MAX_DROPPED_FILES: usize = 16;
+const ASSET_EXTENSION_HEADER: &str = "celestite-extension";
+const ASSET_DROPPED_EVENT: &str = "celestite:asset-dropped";
+const ASSET_FAILED_EVENT: &str = "celestite:asset-failed";
 use serde::{Deserialize, Serialize};
-use tauri::{Manager, Runtime, State, WebviewWindow};
+use tauri::{Emitter, EventTarget, Manager, Runtime, State, WebviewWindow, ipc::InvokeBody};
 use tauri_plugin_opener::OpenerExt;
 
 use crate::state::{
@@ -166,6 +171,121 @@ pub async fn insert_link<R: Runtime>(
         )?)
     })
     .await
+}
+
+#[derive(Clone, Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+struct DroppedAsset {
+    digest: String,
+    extension: String,
+    label: String,
+}
+
+#[derive(Clone, Debug, Serialize)]
+struct AssetFailure {
+    message: String,
+}
+
+fn store_media(
+    store: &NoteStore,
+    document: &Document,
+    source: AssetSource<'_>,
+    extension: &str,
+) -> Result<AssetReceipt, CommandError> {
+    if !store.may_link_media(document) {
+        return Err(celestite_documents::DocumentError::Link(
+            "Save this note in the library before adding media.",
+        )
+        .into());
+    }
+    Ok(store.store_asset(source, extension)?)
+}
+
+/// Stores pasted media bytes sent as the raw request body with the `celestite-extension` header.
+#[tauri::command]
+pub async fn store_asset<R: Runtime>(
+    window: WebviewWindow<R>,
+    state: State<'_, AppState>,
+    request: tauri::ipc::Request<'_>,
+) -> Result<AssetReceipt, CommandError> {
+    let InvokeBody::Raw(bytes) = request.body() else {
+        return Err(CommandError::internal(
+            "Media bytes must be sent as a raw request body.",
+        ));
+    };
+    if bytes.len() > MAX_PASTED_ASSET_BYTES {
+        return Err(CommandError {
+            kind: "tooLarge",
+            message: String::from("Pasted media is limited to 64 MiB; drop the file instead."),
+        });
+    }
+    let extension = request
+        .headers()
+        .get(ASSET_EXTENSION_HEADER)
+        .and_then(|value| value.to_str().ok())
+        .ok_or_else(|| CommandError::internal("The media extension header is missing."))?
+        .to_owned();
+    let bytes = bytes.clone();
+    let label = window.label().to_owned();
+    with_registry(&state, move |registry, store| {
+        let entry = registry.active_document(&label)?;
+        store_media(
+            store,
+            &entry.document,
+            AssetSource::Bytes(&bytes),
+            &extension,
+        )
+    })
+    .await
+}
+
+/// Stores files the native window received by drag and drop, then tells the webview about each one.
+pub async fn receive_dropped_files<R: Runtime>(window: tauri::Window<R>, paths: Vec<PathBuf>) {
+    let state = window.state::<AppState>();
+    for path in paths.into_iter().take(MAX_DROPPED_FILES) {
+        let label = window.label().to_owned();
+        let extension = path
+            .extension()
+            .and_then(|value| value.to_str())
+            .unwrap_or_default()
+            .to_owned();
+        let name = path
+            .file_stem()
+            .and_then(|value| value.to_str())
+            .unwrap_or("file")
+            .to_owned();
+        let stored = with_registry(&state, move |registry, store| {
+            let entry = registry.active_document(&label)?;
+            store_media(
+                store,
+                &entry.document,
+                AssetSource::File(Path::new(&path)),
+                &extension,
+            )
+        })
+        .await;
+        let result = match stored {
+            Ok(receipt) => window.emit_to(
+                EventTarget::webview_window(window.label()),
+                ASSET_DROPPED_EVENT,
+                DroppedAsset {
+                    digest: receipt.digest,
+                    extension: receipt.extension,
+                    label: name,
+                },
+            ),
+            Err(error) => window.emit_to(
+                EventTarget::webview_window(window.label()),
+                ASSET_FAILED_EVENT,
+                AssetFailure {
+                    message: error.message,
+                },
+            ),
+        };
+        if let Err(error) = result {
+            eprintln!("Could not report a dropped file to its note: {error}");
+        }
+    }
 }
 
 #[tauri::command]

@@ -57,6 +57,86 @@ fn an_untitled_note_is_written_into_the_library_at_its_first_nonempty_checkpoint
 }
 
 #[test]
+fn media_are_stored_once_by_digest_and_refuse_collisions_and_unsupported_types()
+-> Result<(), Box<dyn Error>> {
+    use celestite_documents::{AssetReceipt, AssetSource};
+    let area = tempdir()?;
+    let store = store_with_library(area.path())?;
+    let png = b"\x89PNG\r\n\x1a\n fixture";
+    let digest = celestite_archive::ObjectId::of(png).digest().to_owned();
+    let receipt = store.store_asset(AssetSource::Bytes(png), "PNG")?;
+    assert_eq!(
+        receipt,
+        AssetReceipt {
+            digest: digest.clone(),
+            extension: String::from("png")
+        }
+    );
+    let assets = area.path().join("library/assets");
+    let stored = assets.join(format!("{digest}.png"));
+    assert_eq!(fs::read(&stored)?, png);
+    assert_eq!(store.store_asset(AssetSource::Bytes(png), "png")?, receipt);
+    assert_eq!(fs::read_dir(&assets)?.count(), 1);
+    let dropped = area.path().join("photo.JPEG");
+    fs::write(&dropped, png)?;
+    let moved = store.store_asset(AssetSource::File(&dropped), "JPEG")?;
+    assert_eq!(moved.extension, "jpg");
+    assert_eq!(moved.digest, digest);
+    assert_eq!(fs::read(assets.join(format!("{digest}.jpg")))?, png);
+    assert_eq!(fs::read_dir(&assets)?.count(), 2);
+    fs::write(&stored, b"replaced outside Celestite")?;
+    let collision = store.store_asset(AssetSource::Bytes(png), "png");
+    assert_eq!(
+        collision.as_ref().err().map(DocumentError::kind),
+        Some("link")
+    );
+    assert_eq!(fs::read(&stored)?, b"replaced outside Celestite");
+    assert_eq!(fs::read_dir(&assets)?.count(), 2);
+    assert_eq!(
+        store
+            .store_asset(AssetSource::Bytes(png), "exe")
+            .as_ref()
+            .err()
+            .map(DocumentError::kind),
+        Some("link")
+    );
+    assert_eq!(
+        store
+            .store_asset(AssetSource::File(area.path()), "png")
+            .as_ref()
+            .err()
+            .map(DocumentError::kind),
+        Some("invalidPath")
+    );
+    let untitled = Document::new_in_library();
+    assert!(store.may_link_media(&untitled));
+    let outside = area.path().join("outside.md");
+    fs::write(&outside, "# Outside\n")?;
+    let mut standalone = Document::open(&outside)?;
+    store.bind_document(&mut standalone)?;
+    assert!(!store.may_link_media(&standalone));
+    let mut inside = Document::new_in_library();
+    inside.edit(
+        &inside.snapshot().token,
+        1,
+        format!("{}# Inside\n", inside.snapshot().text),
+    )?;
+    assert!(store.place_in_library(&mut inside)?);
+    assert!(store.may_link_media(&inside));
+    drop(store);
+    let bare = NoteStore::new(area.path().join("bare"))?;
+    assert!(!bare.may_link_media(&untitled));
+    assert_eq!(
+        bare.store_asset(AssetSource::Bytes(png), "png")
+            .as_ref()
+            .err()
+            .map(DocumentError::kind),
+        Some("link")
+    );
+    Ok(())
+}
+
+#[test]
 fn standalone_notes_and_stores_without_a_library_keep_the_save_as_model()
 -> Result<(), Box<dyn Error>> {
     let area = tempdir()?;

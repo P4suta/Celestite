@@ -66,6 +66,45 @@ function titleOf(text: string): string | null {
   return /^# (.+)$/mu.exec(text)?.[1]?.trim() ?? null;
 }
 
+const PNG_SIGNATURE = [0x89, 0x50, 0x4e, 0x47];
+const JPEG_SIGNATURE = [0xff, 0xd8, 0xff];
+
+function startsWith(bytes: Uint8Array, signature: readonly number[]): boolean {
+  return signature.every((value, index) => bytes[index] === value);
+}
+
+async function storeAsset(payload: unknown): Promise<{ digest: string; extension: string }> {
+  const bytes =
+    payload instanceof Uint8Array
+      ? payload
+      : payload instanceof ArrayBuffer
+        ? new Uint8Array(payload)
+        : Array.isArray(payload)
+          ? Uint8Array.from(payload as number[])
+          : null;
+  if (!bytes) throw { kind: "internal", message: "Media bytes must be sent as a raw body." };
+  const extension = startsWith(bytes, PNG_SIGNATURE)
+    ? "png"
+    : startsWith(bytes, JPEG_SIGNATURE)
+      ? "jpg"
+      : null;
+  if (!extension || fault === "media-unsupported")
+    throw { kind: "link", message: "This file type is not supported as media." };
+  const digest = Array.from(
+    new Uint8Array(await crypto.subtle.digest("SHA-256", Uint8Array.from(bytes))),
+  )
+    .map((value) => value.toString(16).padStart(2, "0"))
+    .join("");
+  window.document.body.setAttribute("data-stored-asset", `${digest}.${extension}`);
+  return { digest, extension };
+}
+
+(window as unknown as { celestiteMock: unknown }).celestiteMock = {
+  drop: (label: string, digest: string, extension: string): Promise<void> =>
+    emit("celestite:asset-dropped", { digest, extension, label }),
+  fail: (message: string): Promise<void> => emit("celestite:asset-failed", { message }),
+};
+
 mockWindows("note-main");
 mockIPC(
   (command, payload): unknown => {
@@ -205,6 +244,8 @@ mockIPC(
           caret: request.from + body.length,
         };
       }
+      case "store_asset":
+        return storeAsset(payload);
       case "set_appearance": {
         const { appearance } = v.parse(v.object({ appearance: appearanceSchema }), payload);
         preferences = { ...preferences, appearance };

@@ -29,9 +29,17 @@ pub struct HarnessExpectation {
     pub expectation: Expectation,
 }
 
-pub const EXPECTED_HARNESSES: [HarnessExpectation; 29] = [
+pub const EXPECTED_HARNESSES: [HarnessExpectation; 31] = [
     HarnessExpectation {
         name: "proofs::library_writes_only_untitled_nonempty_notes_into_an_existing_library",
+        expectation: Expectation::Proof { covers: 4 },
+    },
+    HarnessExpectation {
+        name: "proofs::media_are_written_once_kept_when_identical_and_never_overwritten",
+        expectation: Expectation::Proof { covers: 3 },
+    },
+    HarnessExpectation {
+        name: "proofs::media_links_require_a_library_and_a_note_without_a_path_or_inside_it",
         expectation: Expectation::Proof { covers: 4 },
     },
     HarnessExpectation {

@@ -47,6 +47,9 @@ onMount(() => {
           : (candidate.title ?? candidate.id);
         void session?.insertLink(context.range, words, target, context.image);
       },
+      media: (files, caret) => {
+        void session?.addMedia(files, caret);
+      },
     },
   );
   session = new NoteSession(
@@ -62,6 +65,7 @@ onMount(() => {
     },
     (position) => editor?.jumpTo(position),
     (patches, caret) => editor?.applyPatches(patches, caret),
+    () => editor?.view.state.selection.main.head ?? 0,
   );
   void session.initialize().then(() => editor?.focus());
   return (): void => {

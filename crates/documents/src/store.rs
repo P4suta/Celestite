@@ -5,15 +5,32 @@ use std::{
     sync::Mutex,
 };
 
-use celestite_core::library_write;
+use celestite_core::{AssetStore, library_write, media_link_allowed, plan_asset_store};
 use serde::{Deserialize, Serialize};
+use tempfile::NamedTempFile;
 use uuid::Uuid;
 
 use crate::{
     Document, DocumentError, MAX_FILE_BYTES,
     document::{RecoveryRecord, atomic_write, read_bounded},
     library::{LinkCandidate, TitleIndex},
+    navigation::asset_extension,
 };
+
+/// The bytes of a media file to store, either in memory or on disk.
+#[derive(Clone, Copy, Debug)]
+pub enum AssetSource<'a> {
+    Bytes(&'a [u8]),
+    File(&'a Path),
+}
+
+/// The library name of stored media: `assets/<digest>.<extension>`.
+#[derive(Clone, Debug, Eq, PartialEq, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AssetReceipt {
+    pub digest: String,
+    pub extension: String,
+}
 
 const MAX_JSON_STRING_BYTE_EXPANSION: usize = 6;
 const RECOVERY_METADATA_RESERVE_BYTES: usize = 8192;
@@ -142,6 +159,73 @@ impl NoteStore {
             .map_err(|_| DocumentError::InvalidRecovery)?;
         titles.refresh(&library)?;
         Ok(titles.candidates(query))
+    }
+
+    /// Reports whether a media link from this note can resolve: a library exists and the note has no path yet or sits inside it.
+    pub fn may_link_media(&self, document: &Document) -> bool {
+        let library = self.canonical_library();
+        let in_library = match (document.path().and_then(Path::parent), library.as_deref()) {
+            (Some(parent), Some(library)) => parent == library,
+            _ => false,
+        };
+        media_link_allowed(
+            self.library.is_some(),
+            document.path().is_some(),
+            in_library,
+        )
+    }
+
+    /// Stores media under `assets/<digest>.<extension>` in the library, once per content.
+    ///
+    /// An identical existing file is kept, and a different file under the same digest name is refused.
+    pub fn store_asset(
+        &self,
+        source: AssetSource<'_>,
+        extension: &str,
+    ) -> Result<AssetReceipt, DocumentError> {
+        let extension = asset_extension(extension).ok_or(DocumentError::Link(
+            "This file type is not supported as media.",
+        ))?;
+        let library = self
+            .ensure_library()?
+            .ok_or(DocumentError::Link("Media need a library folder."))?;
+        let assets = library.join(celestite_archive::ASSET_DIRECTORY);
+        let mut temporary = NamedTempFile::new_in(&assets)?;
+        let digest = match source {
+            AssetSource::Bytes(mut bytes) => {
+                celestite_archive::copy_hashed(&mut bytes, temporary.as_file_mut())?
+            }
+            AssetSource::File(path) => {
+                if !fs::symlink_metadata(path)?.is_file() {
+                    return Err(DocumentError::InvalidPath);
+                }
+                celestite_archive::copy_hashed(&mut File::open(path)?, temporary.as_file_mut())?
+            }
+        };
+        let target = assets.join(format!("{}.{extension}", digest.digest()));
+        let exists = fs::symlink_metadata(&target).is_ok();
+        let same_content = exists
+            && celestite_archive::copy_hashed(&mut File::open(&target)?, &mut std::io::sink())?
+                == digest;
+        match plan_asset_store(exists, same_content) {
+            AssetStore::Write => {
+                temporary.as_file().sync_all()?;
+                temporary
+                    .persist_noclobber(&target)
+                    .map_err(|error| error.error)?;
+                File::open(&assets)?.sync_all()?;
+            }
+            AssetStore::Keep => {}
+            AssetStore::Refuse => {
+                return Err(DocumentError::Link(
+                    "A different file already uses this content digest in the library.",
+                ));
+            }
+        }
+        Ok(AssetReceipt {
+            digest: digest.digest().to_owned(),
+            extension: extension.to_owned(),
+        })
     }
 
     pub fn library_warnings(&self) -> Vec<String> {

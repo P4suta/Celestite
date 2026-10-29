@@ -233,9 +233,11 @@ pub fn plan_link_patch(
             } else {
                 "\n"
             };
+            let mut patched_body = body.to_owned();
+            patched_body.replace_range(from - offset..to - offset, &body_insert);
             let insert = format!(
                 "{}[{label}]{REFERENCE_SEPARATOR}{target}{ending}",
-                separator(body, ending)
+                separator(&patched_body, ending)
             );
             patches.push(LinkPatch {
                 start: source.len(),

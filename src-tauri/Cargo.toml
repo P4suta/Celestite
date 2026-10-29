@@ -23,6 +23,7 @@ tauri-plugin-single-instance = "2.5.4"
 uuid = { version = "1", features = ["v4"] }
 
 [dev-dependencies]
+celestite-archive = { path = "../crates/archive" }
 serde_json = "1"
 tauri = { version = "2", features = ["test"] }
 tempfile = "3.27.0"

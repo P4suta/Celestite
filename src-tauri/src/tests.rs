@@ -308,6 +308,128 @@ fn library_ipc_places_the_first_nonempty_checkpoint_and_completes_links()
     Ok(())
 }
 
+fn invoke_raw(
+    window: &WebviewWindow<MockRuntime>,
+    command: &str,
+    body: Vec<u8>,
+    extension: Option<&str>,
+) -> Result<Value, Value> {
+    let mut headers = tauri::http::HeaderMap::new();
+    if let Some(extension) = extension {
+        headers.insert(
+            "celestite-extension",
+            extension
+                .parse()
+                .map_err(|error| json!(format!("{error}")))?,
+        );
+    }
+    get_ipc_response(
+        window,
+        InvokeRequest {
+            cmd: command.into(),
+            callback: CallbackFn(0),
+            error: CallbackFn(1),
+            url: IPC_ORIGIN
+                .parse()
+                .map_err(|error| json!(format!("{error}")))?,
+            body: InvokeBody::Raw(body),
+            headers,
+            invoke_key: INVOKE_KEY.into(),
+        },
+    )
+    .and_then(|response| {
+        response
+            .deserialize::<Value>()
+            .map_err(|error| json!(error.to_string()))
+    })
+}
+
+#[test]
+fn media_ipc_stores_pasted_bytes_once_and_completes_image_references() -> Result<(), Box<dyn Error>>
+{
+    let desktop = Desktop::start_with_library()?;
+    let initial = desktop.bootstrap()?;
+    let token = initial["document"]["token"].clone();
+    let png = b"\x89PNG\r\n\x1a\n pasted".to_vec();
+    let digest = celestite_archive::ObjectId::of(&png).digest().to_owned();
+    let stored = invoke_raw(&desktop.window, "store_asset", png.clone(), Some("PNG"))
+        .map_err(|error| error.to_string())?;
+    assert_eq!(stored, json!({"digest": digest, "extension": "png"}));
+    let path = desktop
+        .directory
+        .path()
+        .join(format!("library/assets/{digest}.png"));
+    assert_eq!(fs::read(&path)?, png);
+    assert_eq!(
+        invoke_raw(&desktop.window, "store_asset", png.clone(), Some("png")),
+        Ok(stored.clone())
+    );
+    assert_eq!(
+        fs::read_dir(desktop.directory.path().join("library/assets"))?.count(),
+        1
+    );
+    for (body, extension, kind) in [
+        (png.clone(), None, "internal"),
+        (png.clone(), Some("exe"), "link"),
+        (
+            vec![0; crate::commands::MAX_PASTED_ASSET_BYTES + 1],
+            Some("png"),
+            "tooLarge",
+        ),
+    ] {
+        assert_eq!(
+            invoke_raw(&desktop.window, "store_asset", body, extension)
+                .as_ref()
+                .err()
+                .map(|error| &error["kind"]),
+            Some(&json!(kind))
+        );
+    }
+    assert!(
+        invoke(
+            &desktop.window,
+            "store_asset",
+            json!({"bytes": [1, 2, 3], "extension": "png"})
+        )
+        .is_err()
+    );
+    let text = initial["document"]["text"]
+        .as_str()
+        .ok_or("Missing text")?
+        .to_owned();
+    let edit = json!({"token":token,"revision":0,"text":text});
+    let planned = invoke(
+        &desktop.window,
+        "insert_link",
+        json!({"edit":edit,"link":{"from":text.len(),"to":text.len(),"words":"pasted","image":true},"target":{"kind":"asset","digest":digest,"extension":"png"}}),
+    )
+    .map_err(|error| error.to_string())?;
+    assert_eq!(planned["patches"][0]["insert"], json!("![pasted]"));
+    assert_eq!(
+        planned["patches"][1]["insert"],
+        json!(format!("\n\n[pasted]: assets/{digest}.png\n"))
+    );
+    let outside = desktop.directory.path().join("outside.md");
+    fs::write(&outside, "# Outside\n")?;
+    assert!(
+        invoke(
+            &desktop.window,
+            "open_document",
+            json!({"token":token,"path":outside,"reuseCurrent":true}),
+        )
+        .map_err(|error| error.to_string())?["document"]
+            .is_object()
+    );
+    assert_eq!(
+        invoke_raw(&desktop.window, "store_asset", png, Some("png"))
+            .as_ref()
+            .err()
+            .map(|error| &error["kind"]),
+        Some(&json!("link"))
+    );
+    Ok(())
+}
+
 #[test]
 fn ipc_refuses_a_stale_discard_without_removing_recovery() -> Result<(), Box<dyn Error>> {
     let desktop = Desktop::start()?;

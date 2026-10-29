@@ -395,3 +395,28 @@ pub const fn definition_separator(
         Separator::Newline
     }
 }
+
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+pub enum AssetStore {
+    Write,
+    Keep,
+    Refuse,
+}
+
+/// Decides what to do with hashed media whose digest-named file may already exist.
+///
+/// An identical file is kept as is, and a different file under the same digest name is refused instead of overwritten.
+pub const fn plan_asset_store(exists: bool, same_content: bool) -> AssetStore {
+    if !exists {
+        AssetStore::Write
+    } else if same_content {
+        AssetStore::Keep
+    } else {
+        AssetStore::Refuse
+    }
+}
+
+/// Admits a media link only when a library exists and the note has no path yet or lives inside that library.
+pub const fn media_link_allowed(has_library: bool, has_path: bool, in_library: bool) -> bool {
+    has_library && (!has_path || in_library)
+}

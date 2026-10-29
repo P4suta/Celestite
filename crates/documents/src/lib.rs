@@ -11,5 +11,5 @@ pub use document::{
 };
 pub use error::DocumentError;
 pub use library::LinkCandidate;
-pub use navigation::LinkNavigation;
-pub use store::{Appearance, NoteStore, Preferences, RecoveryReport};
+pub use navigation::{LinkNavigation, asset_extension};
+pub use store::{Appearance, AssetReceipt, AssetSource, NoteStore, Preferences, RecoveryReport};

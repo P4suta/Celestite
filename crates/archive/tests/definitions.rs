@@ -45,12 +45,55 @@ fn a_first_link_gets_a_definition_after_a_blank_line() -> Result<(), Box<dyn Err
             format!("See [Obj]\r\n\r\n[Obj]: {id}.md\r\n"),
         ),
         ("See [Obj\n   ", format!("See [Obj]\n   \n[Obj]: {id}.md\n")),
+        (
+            "# Note\n\n[Obj",
+            format!("# Note\n\n[Obj]\n\n[Obj]: {id}.md\n"),
+        ),
     ] {
         let from = source.find("[Obj").ok_or("Missing words")?;
         let to = from + "[Obj".len();
         let (patches, caret) = plan_link_patch(source, from, to, "Obj", &destination, false)?;
         assert_eq!(apply(source, &patches), expected, "{source:?}");
         assert_eq!(caret, from + "[Obj]".len());
+    }
+    Ok(())
+}
+
+#[test]
+fn an_insertion_at_the_end_of_a_blank_line_separates_its_own_definition()
+-> Result<(), Box<dyn Error>> {
+    let digest = ObjectId::of(b"pasted");
+    let destination = LinkDestination::Asset {
+        digest: digest.clone(),
+        extension: String::from("png"),
+    };
+    for (source, expected) in [
+        (
+            "---\nid: 019a3f1e-7c2d-7b8a-9e21-0f4b6c8d1a2e\n---\n\n",
+            format!(
+                "---\nid: 019a3f1e-7c2d-7b8a-9e21-0f4b6c8d1a2e\n---\n\n![shot]\n\n[shot]: assets/{}.png\n",
+                digest.digest()
+            ),
+        ),
+        (
+            "# Note\n\n",
+            format!(
+                "# Note\n\n![shot]\n\n[shot]: assets/{}.png\n",
+                digest.digest()
+            ),
+        ),
+        (
+            "# Note\n",
+            format!(
+                "# Note\n![shot]\n\n[shot]: assets/{}.png\n",
+                digest.digest()
+            ),
+        ),
+    ] {
+        let at = source.len();
+        let (patches, caret) = plan_link_patch(source, at, at, "shot", &destination, true)?;
+        assert_eq!(apply(source, &patches), expected, "{source:?}");
+        assert_eq!(caret, at + "![shot]".len());
     }
     Ok(())
 }
