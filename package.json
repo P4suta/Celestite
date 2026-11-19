@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "pnpm typecheck && vite build",
@@ -31,14 +31,14 @@
     "valibot": "1.5.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.3",
-    "@playwright/test": "1.64.1",
+    "@biomejs/biome": "2.6.8",
+    "@playwright/test": "1.65.1",
     "@sveltejs/vite-plugin-svelte": "7.3.1",
     "@tauri-apps/cli": "^2.12.4",
-    "@types/node": "26.6.5",
-    "svelte-check": "4.7.7",
+    "@types/node": "26.6.6",
+    "svelte-check": "4.7.8",
     "typescript": "^6.0.3",
-    "vite": "8.3.5",
-    "vitest": "5.0.5"
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
   }
 }
