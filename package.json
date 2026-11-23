@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "pnpm typecheck && vite build",
-    "typecheck": "svelte-check --tsconfig ./tsconfig.json --fail-on-warnings && tsc --noEmit",
+    "typecheck": "svelte-check --tsgo --tsconfig ./tsconfig.json --fail-on-warnings && node node_modules/@typescript/native/bin/tsc --noEmit",
     "lint": "biome check .",
     "test": "vitest run",
     "test:ui": "playwright test",
@@ -36,8 +36,9 @@
     "@sveltejs/vite-plugin-svelte": "7.3.1",
     "@tauri-apps/cli": "^2.12.4",
     "@types/node": "26.6.6",
+    "@typescript/native": "npm:typescript@^7.0.0",
     "svelte-check": "4.7.8",
-    "typescript": "^7.0.0",
+    "typescript": "^6.0.3",
     "vite": "8.3.8",
     "vitest": "5.1.1"
   }

@@ -219,7 +219,7 @@ importers:
         version: 5.58.0
       valibot:
         specifier: 1.5.0
-        version: 1.5.0(typescript@7.0.2)
+        version: 1.5.0(typescript@6.0.3)
     devDependencies:
       '@biomejs/biome':
         specifier: 2.6.8
@@ -236,12 +236,15 @@ importers:
       '@types/node':
         specifier: 26.6.6
         version: 26.6.6
+      '@typescript/native':
+        specifier: npm:typescript@^7.0.0
+        version: typescript@7.0.2
       svelte-check:
         specifier: 4.7.8
-        version: 4.7.8(picomatch@4.0.7)(svelte@5.58.0)(typescript@7.0.2)
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.58.0)(typescript@6.0.3)
       typescript:
-        specifier: ^7.0.0
-        version: 7.0.2
+        specifier: ^6.0.3
+        version: 6.0.3
       vite:
         specifier: 8.3.8
         version: 8.3.8(@types/node@26.6.6)
@@ -1035,6 +1038,11 @@ packages:
   tslib@2.9.1:
     resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
 
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   typescript@7.0.2:
     resolution: {integrity: sha512-8FYau96o3NKOhbjKi/qNvG/W5jhzxkbdm5sj9AbZ/5T5sWqn3hJgLfGx27sRKZWTvyzCP8dLRBTf5tBTSRVUNA==}
     engines: {node: '>=16.20.0'}
@@ -1758,7 +1766,7 @@ snapshots:
 
   style-mod@4.1.4: {}
 
-  svelte-check@4.7.8(picomatch@4.0.7)(svelte@5.58.0)(typescript@7.0.2):
+  svelte-check@4.7.8(picomatch@4.0.7)(svelte@5.58.0)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.3
@@ -1767,7 +1775,7 @@ snapshots:
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.58.0
-      typescript: 7.0.2
+      typescript: 6.0.3
     transitivePeerDependencies:
       - picomatch
 
@@ -1803,6 +1811,8 @@ snapshots:
   tslib@2.9.1:
     optional: true
 
+  typescript@6.0.3: {}
+
   typescript@7.0.2:
     optionalDependencies:
       '@typescript/typescript-aix-ppc64': 7.0.2
@@ -1828,9 +1838,9 @@ snapshots:
 
   undici-types@8.9.0: {}
 
-  valibot@1.5.0(typescript@7.0.2):
+  valibot@1.5.0(typescript@6.0.3):
     optionalDependencies:
-      typescript: 7.0.2
+      typescript: 6.0.3
 
   vite@8.3.8(@types/node@26.6.6):
     dependencies:
