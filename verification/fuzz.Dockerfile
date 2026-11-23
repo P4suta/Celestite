@@ -1,4 +1,4 @@
-FROM rust:1.99.0-slim-bookworm@sha256:ba81bc3eaa4422af576c0262515d96b0111a628a6ccc2c86557cf55c9a4bbee0
+FROM rust:1.100.0-slim-bookworm@sha256:476f6598b8d14a1f1bc7e58efc67af206ac8a559c37a3401ce512db2582d0ff7
 RUN rustup toolchain install nightly-2026-10-25 --profile minimal \
     && CARGO_BUILD_JOBS=2 cargo install --locked cargo-fuzz --version 0.13.2
 RUN apt-get update \

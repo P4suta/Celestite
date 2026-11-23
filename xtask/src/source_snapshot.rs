@@ -102,7 +102,7 @@ fn collect(
             fs::write(path, bytes)?;
         }
     }
-    Ok((format!("{:x}", digest.finalize()), files.len()))
+    Ok((hex::encode(digest.finalize()), files.len()))
 }
 
 pub fn read_bounded(path: &Path, limit: usize) -> Result<Vec<u8>, Box<dyn Error>> {

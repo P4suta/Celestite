@@ -8,7 +8,9 @@ mod native_menu;
 mod tests;
 
 use celestite_core::{ExitDecision, plan_exit};
-use celestite_documents::{Document, NoteStore};
+#[cfg(target_os = "macos")]
+use celestite_documents::Document;
+use celestite_documents::NoteStore;
 use tauri::{Emitter, EventTarget, Manager, RunEvent, WindowEvent};
 #[cfg(target_os = "macos")]
 use tauri_plugin_dialog::{DialogExt, MessageDialogKind};
