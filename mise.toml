@@ -1,5 +1,5 @@
 [tools]
-rust = "1.100.0"
+rust = { version = "1.100.0", components = ["clippy", "rustfmt"] }
 node = "26.13.1"
 "aqua:pnpm/pnpm" = "12.22.0"
 just = "1.59.0"

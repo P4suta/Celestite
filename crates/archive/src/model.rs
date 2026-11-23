@@ -118,10 +118,10 @@ impl From<NoteId> for String {
 pub struct ObjectId(String);
 impl ObjectId {
     pub fn of(bytes: &[u8]) -> Self {
-        Self(format!("{HASH_PREFIX}{:x}", Sha256::digest(bytes)))
+        Self::from_digest(Sha256::digest(bytes))
     }
-    pub(crate) fn from_digest(digest: impl fmt::LowerHex) -> Self {
-        Self(format!("{HASH_PREFIX}{digest:x}"))
+    pub(crate) fn from_digest(digest: sha2::digest::Output<Sha256>) -> Self {
+        Self(format!("{HASH_PREFIX}{}", hex::encode(digest)))
     }
     pub fn digest(&self) -> &str {
         &self.0[HASH_PREFIX.len()..]
